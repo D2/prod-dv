@@ -1,0 +1,37 @@
+@use 'colors';
+
+
+%logo-type {
+  font-family: 'Anton', sans-serif;
+  font-size: 77px;
+  color: colors.$txt-main;
+
+}
+
+%heading_1-type {
+  font-family:  'Rigid Square', sans-serif;
+  font-size: 33px;
+  font-weight: 600;
+  color: colors.$txt-main;
+}
+
+%nav_link-type {
+  font-family: 'Prohibition', sans-serif;
+  font-size: 33px;
+  font-weight: 400;
+  color: colors.$txt-main
+}
+
+%nav_link_active-type {
+  @extend %nav_link-type;
+  color: colors.$bg-clr;
+  background-color: colors.$txt-main;
+}
+
+%para_text-type {
+  font-family: 'P22 Underground', sans-serif;
+
+  font-size: 29px;
+  font-weight: 400;
+  color: colors.$txt-main;
+}
