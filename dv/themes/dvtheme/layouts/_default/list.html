@@ -1,0 +1,29 @@
+{{define "main"}}
+<main>
+    <ul>
+        <div id="recent_posts-container">
+
+        <!-- Ranges through content/posts/*.md -->
+        {{ range .Pages }}
+
+            <a href="{{ .Permalink }}" class="blogpreview">
+
+                <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
+
+                <img class ="blogpreview_cover" src="{{.Params.Cover}}" alt="">
+
+                <div class="blogpreview_outline-container">
+                    <span class="blogpreview_title">{{ .Title }}</span>
+
+                    <span class="blogpreview_author">by {{.Params.Author}}</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+</main>
+
+{{end}}
+
+
+
+

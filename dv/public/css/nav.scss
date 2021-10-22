@@ -1,0 +1,53 @@
+@use 'type';
+@use 'colors';
+nav {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding-bottom: 20px;
+  #logo {
+    @include type.logo-type();
+    text-shadow:  -7px 18px rgb(0 0 0 / 35%);
+    margin-left: 50px;
+
+
+    a {
+      text-decoration: none;
+      &:visited,
+      &:link {
+        color: colors.$black
+      }
+
+
+    }
+
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    max-width: 600px;
+    align-items: center;
+    justify-content: space-around;
+    li {
+      @include type.nav_link-type;
+      a {
+        //padding to make the border bigger when color change
+        padding: 20px;
+
+        text-decoration: none;
+
+        &:visited,
+        &:link {
+          color: colors.$black
+        }
+
+        &:focus,
+        &:hover {
+          transition: 250ms;
+          color: colors.$white;
+          background-color: colors.$black;
+        }
+      }
+    }
+  }
+}

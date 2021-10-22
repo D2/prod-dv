@@ -1,0 +1,17 @@
+baseURL = 'http://DV.WTF'
+languageCode = 'en-us'
+title = 'DV.WTF'
+theme = 'dvtheme'
+
+googleAnalytics = 'G-3D12WWY32C'
+[params]
+# default fallback description
+    defaultDescription = "A blog about me learning how to do random stuff and posting it onto the internet."
+fontImports = [
+    'https://use.typekit.net/nhu3gfn.css'
+    ]
+
+
+[permalinks]
+    posts = '/posts/:title'
+    img = '/static/:filename'

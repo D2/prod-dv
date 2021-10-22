@@ -1,0 +1,38 @@
+{{define "main"}}
+
+{{.Content}}
+
+<!--Find amount of blogs-->
+{{$len :=  len (where .Site.RegularPages "Section" "posts") }}
+<!---->
+
+<div id="recent_posts-container">
+
+    {{- range ( where site.RegularPages "Section" "posts" | first 3 ) }}
+    <a href="{{ .Permalink }}" class="blogpreview">
+
+        <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
+
+        <img class ="blogpreview_cover" src="{{.Params.Cover}}" alt="">
+
+        <div class="blogpreview_outline-container">
+            <span class="blogpreview_title">{{ .Title }}</span>
+
+            <span class="blogpreview_author">by {{.Params.Author}}</span>
+        </div>
+    </a>
+    {{ end }}
+
+</div>
+
+
+
+{{if gt $len 3}}
+
+<form id="post_archive-button">
+    <input class="default-button"type="button" value="Post Archive" onclick="history.back()">
+</form>
+
+{{end}}
+
+{{end}}

@@ -1,0 +1,33 @@
+{{define "main"}}
+<div class="blogpost-container">
+    <h1 id="title">{{ .Title }}</h1>
+
+    <div class="coverimg">
+        <img src="{{.Params.Cover}}" alt="{{ .Title}}">
+    </div>
+    <div class="postdate">
+        {{ .Date | time.Format ":date_long" }}
+    </div>
+
+    <div class="author">
+        by {{.Params.Author}}
+    </div>
+
+
+
+    {{.Content}}
+
+    <div class="tags">
+        <span>Tags:</span>
+        {{range $tag := .Params.Tags}}
+        <div class="tag">
+            {{$tag}}
+        </div>
+
+        {{end}}
+    </div>
+
+
+</div>
+
+{{end}}
