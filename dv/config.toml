@@ -15,3 +15,4 @@ fontImports = [
 [permalinks]
     posts = '/posts/:title'
     img = '/static/:filename'
+
