@@ -1,0 +1,35 @@
+@use 'type';
+@use 'colors';
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: colors.$black;
+  ul {
+    @include type.nav_link-type;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: auto;
+    li {
+      a {
+        //padding to make the border bigger when color change
+        padding: 20px;
+
+        text-decoration: none;
+        &:visited,
+        &:link {
+          color: colors.$white;
+        }
+        &:focus,
+        &:hover {
+          color: colors.$black;
+          background-color: colors.$white;
+
+        }
+      }
+    }
+  }
+}

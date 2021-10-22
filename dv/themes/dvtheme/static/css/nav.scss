@@ -6,10 +6,20 @@ nav {
   grid-template-columns: auto 1fr;
   padding-bottom: 20px;
   #logo {
-    @extend %logo-type;
+    @include type.logo-type();
     text-shadow:  -7px 18px rgb(0 0 0 / 35%);
     margin-left: 50px;
 
+
+    a {
+      text-decoration: none;
+      &:visited,
+      &:link {
+        color: colors.$black
+      }
+
+
+    }
 
   }
   ul {
@@ -19,7 +29,25 @@ nav {
     align-items: center;
     justify-content: space-around;
     li {
-      @extend %nav_link-type;
+      @include type.nav_link-type;
+      a {
+        //padding to make the border bigger when color change
+        padding: 20px;
+
+        text-decoration: none;
+
+        &:visited,
+        &:link {
+          color: colors.$black
+        }
+
+        &:focus,
+        &:hover {
+          transition: 250ms;
+          color: colors.$white;
+          background-color: colors.$black;
+        }
+      }
     }
   }
 }
