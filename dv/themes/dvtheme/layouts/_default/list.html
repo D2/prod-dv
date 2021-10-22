@@ -1,5 +1,5 @@
 {{define "main"}}
-
+<h1>Filter by Tag</h1>
 <div class="taglist">
 
 
@@ -15,27 +15,27 @@
     {{end}}
 {{end}}
 </div>
+<br><br>
+<h1>All Posts</h1>
 
+<div id="recent_posts-container">
 
-        <div id="recent_posts-container">
+    <!-- Ranges through content/posts/*.md -->
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="blogpreview">
 
-        <!-- Ranges through content/posts/*.md -->
-        {{ range .Pages }}
+        <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
 
-            <a href="{{ .Permalink }}" class="blogpreview">
+        <img class ="blogpreview_cover" src="{{.Params.Cover}}" alt="">
 
-                <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
+        <div class="blogpreview_outline-container">
+            <span class="blogpreview_title">{{ .Title }}</span>
 
-                <img class ="blogpreview_cover" src="{{.Params.Cover}}" alt="">
-
-                <div class="blogpreview_outline-container">
-                    <span class="blogpreview_title">{{ .Title }}</span>
-
-                    <span class="blogpreview_author">by {{.Params.Author}}</span>
-                </div>
-            </a>
-            {{ end }}
+            <span class="blogpreview_author">by {{.Params.Author}}</span>
         </div>
+    </a>
+    {{ end }}
+</div>
 {{end}}
 
 
