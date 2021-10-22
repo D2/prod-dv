@@ -3,7 +3,7 @@
 @use 'type';
 @use "nav";
 @use 'single';
-
+@use 'break';
 @use 'footer';
 //resets
 
@@ -19,7 +19,7 @@ h1 {
   width: calc(100% - 30px);
   background-color: colors.$black;
   padding: 10px;
-  margin: 35px 15px 35px 15px;
+  margin: 35px auto 35px auto;
   text-align: center;
 }
 
@@ -63,7 +63,6 @@ p {
 }
 
 
-
 #recent_posts-container {
   margin: 50px 15px 0 15px;
   gap: 30px;
@@ -79,6 +78,7 @@ p {
     grid-template-columns: 1fr;
     padding: 5px;
     &_date {
+
         @include type.preview_date-type;
         background-color: colors.$black;
         color: colors.$bg-clr;
@@ -98,7 +98,6 @@ p {
     }
     &_title {
       @include type.preview_title-type;
-      text-transform: uppercase;
       display: block;
       color: colors.$black;
       margin: 10px 10px 15px 15px;
@@ -123,83 +122,32 @@ p {
   }
 
 }
+.taglist {
+  display: flex;
+  max-width: break.$maxstretch;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: left;
 
+  margin: 0 15px 0 15px;
+  &_tag {
 
-
-$maxstretch: 1000px;
-$moblayoutswitch: $maxstretch + 100px;
-
-@media only screen and (max-width: 1000px) {
-  //stuff
-  h1 {
+    background-color: colors.$bg-secondary;
+    padding: 20px;
   }
-
-  //header
-  header nav {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr;
-
-    #logo {
-      @include type.logo-type($mob: true);
-      margin: auto;
-      text-shadow: none;
+  &_button {
+    display: flex;
+    column-gap: 10px;
+    @include type.tags-type;
+    a {
+      text-decoration: none;
     }
+    a:link, a:visited {
+      color: colors.$black;
 
-    ul {
-      justify-content: space-around;
-      max-width: unset;
     }
   }
-  //footer
-
-  footer {
-    height: 30px;
-  }
-  footer ul {
-    height: 100%;
-    margin-top: 15px;
-    justify-content: space-around;
-    align-items: center;
-  }
-  //mobile font sizes
-  h1 {
-    @include type.heading_1-type($mob: true);
-  }
-  p {
-    @include type.para_text-type($mob: true);
-  }
-  .error {
-    @include type.error-type($mob: true);
-  }
-  .default-button {
-    @include type.button-type($mob: true);
-  }
-
-  header nav #logo {
-    @include type.logo-type($mob: true);
-  }
-
-  nav ul li {
-    @include type.nav_link-type($mob: true);
-  }
-  footer ul {
-    @include type.heading_1-type($mob: true);
-  }
-
-  .blogpreview_date {
-    @include type.preview_date-type($mob: true);
-  }
-  .blogpreview_author {
-    @include type.author-type($mob: true);
-  }
-  .blogpreview_title {
-    @include type.preview_title-type($mob: true);
-  }
-  .blogpost-container p em {
-    @include type.italic_emphasis-type($mob:true)
-  }
-  .blogpost-container .tags {
-    @include type.tags-type($mob:true)
+  &_count {
+    @include type.date-type;
   }
 }

@@ -7,6 +7,7 @@
 
 
 .blogpost-container {
+
   h1#title {
     font-size: 35px;
     padding: 50px 0 50px 0;
@@ -17,7 +18,7 @@
     margin-left: 25px;
     margin-right: 15px;
     padding-bottom: 30px;
-    max-width: 400px;
+    max-width: 450px;
 
     float: right;
     img {
@@ -31,6 +32,8 @@
   }
   .postdate {
     @include type.date-type;
+    margin-left: 15px;
+    margin-bottom: 25px;
   }
 
   p {
@@ -42,10 +45,9 @@
   }
   .tags {
       display: flex;
-      margin: 20px 0 20px 15px;
+      margin: 55px 0 20px 15px;
       gap: 20px;
       flex-wrap: wrap;
-      max-width: 300px;
 
       @include type.tags-type;
     .tag {

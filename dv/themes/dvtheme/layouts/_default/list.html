@@ -1,6 +1,22 @@
 {{define "main"}}
-<main>
-    <ul>
+
+<div class="taglist">
+
+
+{{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+    <div class="taglist_tag">
+        <div class="taglist_button">
+            <a href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
+            <div class="taglist_count">({{$cnt}}) </div>
+        </div>
+    </div>
+
+    {{end}}
+{{end}}
+</div>
+
+
         <div id="recent_posts-container">
 
         <!-- Ranges through content/posts/*.md -->
@@ -20,8 +36,6 @@
             </a>
             {{ end }}
         </div>
-</main>
-
 {{end}}
 
 

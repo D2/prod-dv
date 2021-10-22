@@ -7,7 +7,7 @@ $large_size-mob: 22px;
 $med_size: 25px;
 $med_size-mob: 18px;
 $small_size: 18px;
-$small_size-mob: 16px;
+$small_size-mob: 18px;
 // Why did I use mixins here?
 // because its helped me DRY a little bit
 //
@@ -158,9 +158,10 @@ $small_size-mob: 16px;
   }
   @else {
     font-size:$med_size;
-    font-family: p22-underground, sans-serif;
-    font-weight: 900;
+    font-family: Prohibition, sans-serif;
+    font-weight: 400;
     font-style: normal;
+    letter-spacing: 1.5px;
 
 
   }
