@@ -35,8 +35,8 @@ $moblayoutswitch: $maxstretch + 100px;
 
     #logo {
       @include type.logo-type($mob: true);
-      margin: auto;
-      text-shadow: none;
+      margin: 0 auto 20px auto;
+      //text-shadow: none;
     }
 
     ul {
@@ -51,12 +51,11 @@ $moblayoutswitch: $maxstretch + 100px;
   //footer
 
   footer {
-    height: 30px;
   }
   footer ul {
     height: 100%;
     margin-top: 15px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
 
@@ -87,7 +86,7 @@ $moblayoutswitch: $maxstretch + 100px;
   nav ul li {
     @include type.nav_link-type($mob: true);
   }
-  footer ul {
+  footer ul li {
     @include type.heading_1-type($mob: true);
   }
 

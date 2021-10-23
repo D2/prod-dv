@@ -8,8 +8,13 @@
     <link rel="canonical" href="http://DV.WTF/posts/" />
 
     <meta name="description" content="A blog about me learning how to do random stuff and posting it onto the internet. ">
+    <link rel="shortcut icon"
+          type="image/png"
+          href="/img/favicon.png">
+
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+
 
     
     
@@ -26,17 +31,18 @@
 <meta name="twitter:description" content=""/>
 
     
-    
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-3D12WWY32C', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D12WWY32C"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-3D12WWY32C');
+        </script>
+
+
 
     
 
@@ -46,6 +52,8 @@ if (!doNotTrack) {
     
 
     <title>DV.WTF | Posts</title>
+
+
 </head>
 <body>
         <div id="content_header-Container"><header>
@@ -56,19 +64,51 @@ if (!doNotTrack) {
         </span>
 
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/posts">Blog</a></li>
-            <li><a href="https://github.com/d2">Github</a></li>
+            
+            
+                
+                    <li>
+                        <a href=" /">Home</a>
+                    </li>
+                
+
+
+            
+                
+                    <li class = "active">
+                        <a href=" /posts/">Posts</a>
+                    </li>
+                    
+
+
+            
+                
+                    <li>
+                        <a href=" https://github.com/d2">Github</a>
+                    </li>
+                
+
+
+            
+
         </ul>
     </nav>
 
+
 </header><div id="content">
+
+
+
+<h1 class="taglist_collapsible">Filter By Tag (Click to open)</h1>
 
 <div class="taglist">
 
 
+
+
  
     
+
     <div class="taglist_tag">
         <div class="taglist_button">
             <a href=/tags/design/ title="All pages with tag <i>design</i>">design</a>
@@ -79,6 +119,7 @@ if (!doNotTrack) {
     
  
     
+
     <div class="taglist_tag">
         <div class="taglist_button">
             <a href=/tags/hugo/ title="All pages with tag <i>hugo</i>">hugo</a>
@@ -89,6 +130,7 @@ if (!doNotTrack) {
     
  
     
+
     <div class="taglist_tag">
         <div class="taglist_button">
             <a href=/tags/js/ title="All pages with tag <i>js</i>">js</a>
@@ -99,6 +141,7 @@ if (!doNotTrack) {
     
  
     
+
     <div class="taglist_tag">
         <div class="taglist_button">
             <a href=/tags/web/ title="All pages with tag <i>web</i>">web</a>
@@ -110,33 +153,77 @@ if (!doNotTrack) {
 
 </div>
 
+<script>
 
-        <div id="recent_posts-container">
+
+    var coll = document.getElementsByClassName("taglist_collapsible");
+    var i;
+    
+
+    coll[0].addEventListener("click", function() {
+        this.classList.toggle("active");
+        console.log("test")
+
+        var content = this.nextElementSibling;
+
 
         
-        
+        var x = content.childElementCount;
+        var h = Math.round(x/3*75) +"px";
 
-            <a href="http://DV.WTF/posts/why-i-have-a-blog/" class="blogpreview">
+        if (content.style.maxHeight  === h) {
+            this.innerHTML = "Filter By Tag (Click to open)";
+            content.style.maxHeight = 0;
+            content.style.overflow= "hidden";
 
-                <span class="blogpreview_date">Oct 21, 2021</span>
+        } else {
+            content.style.maxHeight = h;
+            this.innerHTML = "Filter By Tag (Click to close)";
+            content.style.overflow= "shown";
+        }
+        });
+</script>
 
-                <img class ="blogpreview_cover" src="/img/BuildingBlogCover.png" alt="">
 
-                <div class="blogpreview_outline-container">
-                    <span class="blogpreview_title">Why I have a blog</span>
+    
+    <h1>All Posts</h1>
 
-                    <span class="blogpreview_author">by David</span>
-                </div>
-            </a>
-            
+    
+
+<div id="recent_posts-container">
+
+    
+    
+    <a href="http://DV.WTF/posts/why-i-have-a-blog/" class="blogpreview">
+
+        <span class="blogpreview_date">Oct 21, 2021</span>
+
+        <img class ="blogpreview_cover" srcset="/img/resized/FirstBlogCoverresizedresized.png 250w" alt="">
+
+
+        <div class="blogpreview_outline-container">
+            <span class="blogpreview_title">Why I have a blog</span>
+
+            <span class="blogpreview_author">by David</span>
         </div>
+    </a>
+    
+</div>
 
             </div>
         </div><footer>
 
     <ul>
-        <li><a href="https://linktr.ee/David">LINKTREE</a></li>
-        <li><a href="/Contact">Contact</a></li>
+        
+            <li><a href=" https://linktr.ee/david">LINKTREE</a></li>
+        
+            <li><a href=" /404.html">CONTACT</a></li>
+        
+            <li><a href=" https://github.com/D2/prod-dv">[SITESOURCE]</a></li>
+        
+
+
+
     </ul>
 </footer></body>
 </html>

@@ -76,13 +76,12 @@ p {
   display: flex;
   justify-content: center;
 
-
   .blogpreview {
 
     max-width: 250px;
     text-decoration: none;
     display: grid;
-
+  
     grid-template-rows: auto 1fr auto ;
     grid-template-columns: 1fr;
 

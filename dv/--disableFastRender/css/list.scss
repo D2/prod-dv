@@ -1,0 +1,47 @@
+@use 'type';
+@use 'colors';
+@use 'break';
+
+
+.taglist {
+  display: flex;
+
+  max-width: break.$maxstretch;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: left;
+
+  margin: 0 15px 0 15px;
+
+  max-height: 0;
+  overflow: hidden;
+
+  transition: 300ms;
+  &_collapsible {
+  }
+  &_collapsible.active{
+
+    margin-bottom: 25px;
+  }
+  &_tag {
+
+    background-color: colors.$bg-secondary;
+    padding: 20px;
+    display: flex;
+  }
+  &_button {
+    display: flex;
+    column-gap: 10px;
+    @include type.tags-type;
+    a {
+      text-decoration: none;
+    }
+    a:link, a:visited {
+      color: colors.$black;
+
+    }
+  }
+  &_count {
+    @include type.date-type;
+  }
+}

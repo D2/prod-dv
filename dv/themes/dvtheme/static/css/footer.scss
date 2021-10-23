@@ -12,8 +12,9 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 500px;
+    max-width: 550px;
     margin: auto;
+    gap: 5px;
     li {
       a {
         //padding to make the border bigger when color change

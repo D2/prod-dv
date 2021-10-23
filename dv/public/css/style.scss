@@ -4,27 +4,31 @@
 @use "nav";
 @use 'single';
 @use 'break';
+@use 'list';
 @use 'footer';
+
+
 //resets
 
 * {
   margin: 0;
   padding: 0;
 }
-
+//
 h1 {
   @include type.heading_1-type;
   text-transform: capitalize;
 
-  width: calc(100% - 30px);
-  background-color: colors.$black;
+  width: calc(100% - 80px);
+  color: colors.$light-black;
+  background-color: colors.$offwhite;
+
   padding: 10px;
   margin: 35px auto 35px auto;
   text-align: center;
+  border-radius: 10px;
+
 }
-
-
-
 
 #content {
   display: block;
@@ -34,14 +38,15 @@ h1 {
 
 }
 
-
+//
 #content_header-Container {
   min-height: calc(100vh - 75px);
 }
+
 p {
   @include type.para_text-type;
   margin: 0 15px;
-
+  color: colors.$light-black;
 }
 
 
@@ -53,6 +58,8 @@ p {
     color: colors.$txt-main;
   }
 }
+
+
 .default-button {
   @include type.button-type;
   padding: 15px;
@@ -64,48 +71,64 @@ p {
 
 
 #recent_posts-container {
-  margin: 50px 15px 0 15px;
+  margin: 50px 0 0 0;
   gap: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  justify-content: center;
 
   .blogpreview {
 
+    max-width: 250px;
     text-decoration: none;
     display: grid;
-
+  
     grid-template-rows: auto 1fr auto ;
     grid-template-columns: 1fr;
-    padding: 5px;
+
+    box-shadow:  -1px 6px 12px 3px rgb(10 10 10 / 40%);
+    background-color: colors.$offwhite-secondary;
+    padding: 15px;
+
     &_date {
 
         @include type.preview_date-type;
-        background-color: colors.$black;
-        color: colors.$bg-clr;
-        padding: 5px 15px 10px 5px;
-        margin-right: auto;
 
+        color: colors.$light-black;
+        height: 50px;
+        padding: 5px 0 10px 0;
+        width: 100%;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
     }
     &_cover {
+
+
       width: 100%;
+      margin-left: -10%;
+      box-shadow:  6px 6px 12px 0 rgb(10 10 10 / 40%);
     }
 
 
 
     &_outline-container {
-      outline: 1px inset colors.$black;
-
+      //border: 1px solid colors.$black;
+      border-top: none;
+      padding-bottom: 5px;
     }
     &_title {
       @include type.preview_title-type;
       display: block;
       color: colors.$black;
-      margin: 10px 10px 15px 15px;
+      margin: 25px 10px 15px 15px;
+      text-transform: capitalize;
+
     }
 
     &_author {
-      @include type.author-type;
+      @include type.preview_author-type;
       margin-left: 15px;
+      color: colors.$black;
+
     }
   }
 }
@@ -121,33 +144,4 @@ p {
 
   }
 
-}
-.taglist {
-  display: flex;
-  max-width: break.$maxstretch;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: left;
-
-  margin: 0 15px 0 15px;
-  &_tag {
-
-    background-color: colors.$bg-secondary;
-    padding: 20px;
-  }
-  &_button {
-    display: flex;
-    column-gap: 10px;
-    @include type.tags-type;
-    a {
-      text-decoration: none;
-    }
-    a:link, a:visited {
-      color: colors.$black;
-
-    }
-  }
-  &_count {
-    @include type.date-type;
-  }
 }

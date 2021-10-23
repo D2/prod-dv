@@ -1,7 +1,7 @@
 ---
 title: "Why I have a blog"
 date: 2021-10-21T00:53:59+01:00
-cover: "/img/BuildingBlogCover.png"
+cover: "/img/resized/FirstBlogCoverresized.png"
 draft: false
 author: "David"
 tags: ["HUGO", "JS", "WEB", "DESIGN"]
