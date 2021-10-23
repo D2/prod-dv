@@ -55,19 +55,6 @@ $small_size-mob: 18px;
 
 }
 
-@mixin nav_link_active-type($mob:false) {
-  @if($mob) {
-    font-size:$large_size-mob;
-  }
-  @else {
-    font-size:$large_size;
-    font-family: 'Prohibition', sans-serif;
-    font-weight: 400;
-    color: colors.$bg-clr;
-    background-color: colors.$txt-main;
-  }
-
-}
 
 @mixin para_text-type($mob:false) {
   @if($mob) {
@@ -116,8 +103,11 @@ $small_size-mob: 18px;
   }
   @else {
     font-size:$med_size;
-    font-family:  'Rigid Square', sans-serif;
-    font-weight: 600;
+    font-family: roc-grotesk, sans-serif;
+
+    font-weight: 500;
+
+    font-style: normal;
     color: colors.$txt-main;
   }
 
@@ -158,10 +148,37 @@ $small_size-mob: 18px;
   }
   @else {
     font-size:$med_size;
-    font-family: Prohibition, sans-serif;
+    //font-family: Prohibition, sans-serif;
+    //font-weight: 400;
+    //font-style: normal;
+
+    //font-family: hoss-round, sans-serif;
+    //font-weight: 400;
+    //font-style: normal;
+
+    font-size:$med_size;
+    font-family: roc-grotesk, sans-serif;
+
+    font-weight: 500;
+
+    font-style: normal;
+    color: colors.$txt-main;
+    letter-spacing: 1.5px;
+
+
+  }
+}
+@mixin preview_author-type ($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: hoss-round, sans-serif;
     font-weight: 400;
     font-style: normal;
-    letter-spacing: 1.5px;
+    color: colors.$txt-main;
+    letter-spacing: 1px;
 
 
   }

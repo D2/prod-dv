@@ -1,7 +1,11 @@
 <footer>
 
     <ul>
-        <li><a href="https://linktr.ee/David">LINKTREE</a></li>
-        <li><a href="/Contact">Contact</a></li>
+        {{range .Site.Params.menu.footer }}
+            <li><a href=" {{.URL}}">{{.name}}</a></li>
+        {{end}}
+
+
+
     </ul>
 </footer>

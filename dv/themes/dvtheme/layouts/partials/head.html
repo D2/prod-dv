@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 
+
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = print .Site.Title " | " "Home"}}{{ end }}
 
@@ -32,6 +33,8 @@
             gtag('config', 'G-3D12WWY32C');
         </script>
 
+
+
     {{ end }}
 
 
@@ -40,4 +43,6 @@
     {{ end }}
 
     <title>{{ $title }}</title>
+
+
 </head>

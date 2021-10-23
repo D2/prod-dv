@@ -101,7 +101,8 @@ $moblayoutswitch: $maxstretch + 100px;
     @include type.preview_title-type($mob: true);
   }
   .blogpost-container p em {
-    @include type.italic_emphasis-type($mob:true)
+    //@include type.italic_emphasis-type($mob:true)
+    //keep this unset, text is fine at desktop width
   }
   .blogpost-container .tags {
     //@include type.tags-type($mob:true)

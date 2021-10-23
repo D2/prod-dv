@@ -6,10 +6,23 @@
         </span>
 
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/posts">Blog</a></li>
-            <li><a href="https://github.com/d2">Github</a></li>
+            {{$currenturl := .RelPermalink}}
+            {{range .Site.Params.menu.nav }}
+                {{if eq .URL $currenturl}}
+                    <li class = "active">
+                        <a href=" {{.URL}}">{{.name}}</a>
+                    </li>
+                    {{else}}
+                    <li>
+                        <a href=" {{.URL}}">{{.name}}</a>
+                    </li>
+                {{end}}
+
+
+            {{end}}
+
         </ul>
     </nav>
+
 
 </header>
