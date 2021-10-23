@@ -81,7 +81,7 @@
 
         <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
 
-        <img class ="blogpreview_cover" src="{{.Params.Cover}}" alt="">
+        <img class ="blogpreview_cover" srcset="{{.Params.Cover}} 250w" alt="">
 
         <div class="blogpreview_outline-container">
             <span class="blogpreview_title">{{ .Title }}</span>

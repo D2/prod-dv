@@ -3,7 +3,7 @@
 
 footer {
   width: 100%;
-  height: 50px;
+  padding: 10px 0 10px 0;
   background-color: colors.$black;
   ul {
     @include type.nav_link-type;
@@ -11,6 +11,7 @@ footer {
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 500px;
     margin: auto;
     li {
