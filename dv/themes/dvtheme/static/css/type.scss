@@ -25,7 +25,6 @@ $small_size-mob: 18px;
   @else {
     font-size:$massive_size;
     font-family: 'Anton', sans-serif;
-    color: colors.$txt-main;
   }
 }
 
@@ -37,7 +36,6 @@ $small_size-mob: 18px;
     font-size:$med_size;
     font-family:  Prohibition, sans-serif;
     font-weight: 400;
-    color: colors.$white;
   }
 
 }
@@ -50,7 +48,6 @@ $small_size-mob: 18px;
     font-size:$large_size;
     font-family: 'Prohibition', sans-serif;
     font-weight: 400;
-    color: colors.$txt-main
   }
 
 }
@@ -64,7 +61,6 @@ $small_size-mob: 18px;
     font-size:$med_size;
     font-family: 'P22 Underground', sans-serif;
     font-weight: 400;
-    color: colors.$txt-main;
   }
 
 
@@ -92,7 +88,6 @@ $small_size-mob: 18px;
     font-size:$med_size;
     font-family:  'Rigid Square', sans-serif;
     font-weight: 600;
-    color: colors.$txt-main;
   }
 
 }
@@ -107,9 +102,7 @@ $small_size-mob: 18px;
 
     font-weight: 500;
 
-    font-style: normal;
-    color: colors.$txt-main;
-  }
+    font-style: normal;}
 
 }
 
@@ -162,7 +155,6 @@ $small_size-mob: 18px;
     font-weight: 500;
 
     font-style: normal;
-    color: colors.$txt-main;
     letter-spacing: 1.5px;
 
 
@@ -177,7 +169,6 @@ $small_size-mob: 18px;
     font-family: hoss-round, sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: colors.$txt-main;
     letter-spacing: 1px;
 
 

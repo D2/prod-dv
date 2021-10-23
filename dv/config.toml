@@ -39,7 +39,7 @@ googleAnalytics = 'G-3D12WWY32C'
             weight = 3
 
             [[params.menu.footer]]
-            name = "SOURCE"
+            name = "[SITESOURCE]"
             URL = "https://github.com/D2/prod-dv"
             weight = 2
 
