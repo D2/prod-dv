@@ -7,7 +7,12 @@
 @use 'list';
 @use 'footer';
 
-
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
 //resets
 
 * {
@@ -19,15 +24,15 @@ h1 {
   @include type.heading_1-type;
   text-transform: capitalize;
 
-  width: calc(100% - 80px);
-  color: colors.$light-black;
-  background-color: colors.$offwhite;
+  width: calc(100% - 60px);
+  color: var(--h1-clr);
+  background-color: var(--h1-bg);
 
   padding: 10px;
-  margin: 35px auto 35px auto;
+  margin: 35px auto 50px auto;
   text-align: center;
-  border-radius: 10px;
 
+  box-shadow:  1px 5px 17px 0 rgb(10 10 10 / 40%);
 }
 
 #content {
@@ -35,6 +40,11 @@ h1 {
   max-width: 1000px;
   margin: auto;
 
+
+}
+body {
+  background-color: var(--body-bg);
+  transition: 500ms;
 
 }
 
@@ -46,16 +56,16 @@ h1 {
 p {
   @include type.para_text-type;
   margin: 0 15px;
-  color: colors.$light-black;
+  color: var(--para-text-clr);
 }
 
 
 .error {
   @include type.error-type;
   width: 100%;
-  background-color: colors.$bg-secondary;
+  background-color: var(--error-bg);
   .errorExplanation {
-    color: colors.$txt-main;
+    color: var(--error-clr);
   }
 }
 
@@ -75,7 +85,6 @@ p {
   gap: 30px;
   display: flex;
   justify-content: center;
-
   .blogpreview {
 
     max-width: 250px;
@@ -86,14 +95,32 @@ p {
     grid-template-columns: 1fr;
 
     box-shadow:  -1px 6px 12px 3px rgb(10 10 10 / 40%);
-    background-color: colors.$offwhite-secondary;
+    background-color: var(--blog-preview-bg);
+    color: var(--blog-preview-clr);
     padding: 15px;
 
+
+    transition: 100ms;
+    &:hover, &:focus {
+      box-shadow:  0 5px 20px 12px rgb(10 10 10 / 40%);
+
+      margin-top: -10px;
+      margin-bottom: 10px;
+      transition: 100ms;
+
+      .blogpreview_cover {
+        box-shadow: 1px 20px 12px 0 rgb(10 10 10 / 40%);
+        margin-top:-20px;
+        margin-bottom: 20px;
+        transition: 250ms;
+
+      }
+    }
     &_date {
 
         @include type.preview_date-type;
 
-        color: colors.$light-black;
+        color: var(--blog-preview-date-clr);
         height: 50px;
         padding: 5px 0 10px 0;
         width: 100%;
@@ -101,7 +128,7 @@ p {
         border-radius: 10px 10px 0 0;
     }
     &_cover {
-
+      transition: 50ms;
 
       width: 100%;
       margin-left: -10%;
@@ -118,7 +145,7 @@ p {
     &_title {
       @include type.preview_title-type;
       display: block;
-      color: colors.$black;
+      color: var(--blog-preview-title-clr);
       margin: 25px 10px 15px 15px;
       text-transform: capitalize;
 
@@ -127,7 +154,7 @@ p {
     &_author {
       @include type.preview_author-type;
       margin-left: 15px;
-      color: colors.$black;
+      color: var(--blog-preview-author-clr);
 
     }
   }
@@ -145,3 +172,4 @@ p {
   }
 
 }
+

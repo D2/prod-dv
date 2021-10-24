@@ -7,7 +7,9 @@ $moblayoutswitch: $maxstretch + 100px;
 
 @media only screen and (max-width: $maxstretch) {
   //stuff
-
+  body h1 {
+    width: calc(100% - 30px);
+  }
   //single
   .blogpost-container .postdate {
     margin-right: 15px;
@@ -33,6 +35,7 @@ $moblayoutswitch: $maxstretch + 100px;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr;
 
+
     #logo {
       @include type.logo-type($mob: true);
       margin: 0 auto 20px auto;
@@ -47,6 +50,9 @@ $moblayoutswitch: $maxstretch + 100px;
         padding: 5px;
       }
     }
+  }
+  ul li#themeSwitch {
+    grid-row: 1;
   }
   //footer
 
@@ -87,7 +93,9 @@ $moblayoutswitch: $maxstretch + 100px;
     @include type.nav_link-type($mob: true);
   }
   footer ul li {
-    @include type.heading_1-type($mob: true);
+    //@include type.footer_link-type($mob: true);
+    //keep this unset, text is fine at desktop width
+
   }
 
   .blogpreview_date {

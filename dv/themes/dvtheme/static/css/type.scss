@@ -51,6 +51,19 @@ $small_size-mob: 18px;
   }
 
 }
+@mixin footer_link-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: 'Prohibition', sans-serif;
+    font-weight: 400;
+  }
+
+}
+
+
 
 
 @mixin para_text-type($mob:false) {

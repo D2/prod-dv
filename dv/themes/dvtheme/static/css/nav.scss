@@ -15,7 +15,7 @@ nav {
       text-decoration: none;
       &:visited,
       &:link {
-        color: colors.$black
+        color: var(--logo-clr);
       }
 
 
@@ -35,39 +35,55 @@ nav {
         padding: 15px;
 
         text-decoration: none;
-
+        transition: 100ms;
         &:visited,
         &:link {
-          color: colors.$black
+          color: var(--nav-link-clr);
         }
 
         &:focus,
         &:hover {
           transition: 250ms;
-          color: colors.$white;
-          background-color: colors.$black;
+          color: var(--nav-link-hover-clr);
+          background-color: var(--nav-link-hover-bg);
+
+          box-shadow:  5px 5px 12px 6px rgb(10 10 10 / 70%);
         }
       }
     }
   }
 }
 
+nav #themeSwitch{
+  position: absolute;
+  top:15px;
+  right:15px;
+  img {
+    filter: none;
+    height: 50px;
+    transition: transform 250ms;
+  }
+}
+nav #themeSwitch.darktheme img {
+  filter: invert(1);
+  transform: rotate(180deg);
+}
 nav ul li.active { //active link
 
   a {
     padding: 15px;
-    color: colors.$bg-clr;
-    background-color: colors.$txt-main;
-
+    color: var(--nav-link-active-clr);
+    background-color: var(--nav-link-active-bg);
+    box-shadow:  5px 5px 15px 4px rgb(10 10 10 / 40%);
     &:visited,
     &:link {
-      color: colors.$bg-clr;
+      color: var(--nav-link-active-clr);
     }
     &:focus,
     &:hover {
 
-      color: colors.$black;
-      background-color: colors.$bg-secondary;
+      color: var(--nav-link-active-hover-clr);
+      background-color: var(--nav-link-active-hover-bg);
     }
   }
 }

@@ -2,7 +2,7 @@
 
 
 
-<h1 class="taglist_collapsible">Filter By Tag (Click to open)</h1>
+<h1 tabindex=0 class="taglist_collapsible">Filter By Tag (Click to open)</h1>
 
 <div class="taglist">
 
@@ -53,10 +53,13 @@
             content.style.maxHeight = 0;
             content.style.overflow= "hidden";
 
+
         } else {
             content.style.maxHeight = h;
             this.innerHTML = "Filter By Tag (Click to close)";
             content.style.overflow= "shown";
+
+
         }
         });
 </script>

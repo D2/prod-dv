@@ -2,7 +2,30 @@
 <html lang="{{ .Site.LanguageCode }}">
 
     {{- partial "head.html" . -}}
-    <body>
+
+    <body class="lighttheme">
+    <script>
+        document.body.classList.add('notransition'); // Disable transitions
+        if (sessionStorage.getItem("theme") == "darktheme"){
+
+            //dark theme
+            sessionStorage.setItem("theme","darktheme");
+            document.body.classList.add("darktheme");
+
+            document.body.classList.remove("lighttheme");
+        } else {
+            //light theme
+            sessionStorage.setItem("theme","lighttheme");
+            document.body.classList.add("lighttheme");
+
+            document.body.classList.remove("darktheme");
+        }
+
+        document.body.offsetHeight; // Trigger a reflow, flushing the CSS changes
+        document.body.classList.remove('notransition'); // Re-enable transitions
+
+    </script>
+
         <div id="content_header-Container">
             {{- partial "header.html" . -}}
             <div id="content">
@@ -14,4 +37,9 @@
 
         {{- partial "footer.html" . -}}
     </body>
+<script src="/js/theme.js">
+
+</script>
 </html>
+
+
