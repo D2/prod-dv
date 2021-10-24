@@ -9,18 +9,7 @@
 <div id="recent_posts-container">
 
     {{- range ( where site.RegularPages "Section" "posts" | first 3 ) }}
-    <a href="{{ .Permalink }}" class="blogpreview">
-
-        <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
-
-        <img class ="blogpreview_cover" srcset="{{.Params.Cover}} 250w" alt="">
-
-        <div class="blogpreview_outline-container">
-            <span class="blogpreview_title">{{ .Title }}</span>
-
-            <span class="blogpreview_author">by {{.Params.Author}}</span>
-        </div>
-    </a>
+    {{- partial "blogpreview.html" . -}}
     {{ end }}
 
 </div>
@@ -34,5 +23,22 @@
 </form>
 
 {{end}}
+
+<h1 id="contacttitle">Contact</h1>
+<form id="contact" name="contact" method="POST" data-netlify="true">
+    <p id="contact_name">
+        <label>Your Name: <input type="text" name="name" /></label>
+    </p>
+    <p id="contact_email">
+        <label>Your Email: <input type="email" name="email" /></label>
+    </p>
+    <p id="contact_message">
+        <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p id="contact_submit">
+        <button>Send</button>
+    </p>
+</form>
+
 
 {{end}}

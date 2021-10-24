@@ -23,7 +23,7 @@ $moblayoutswitch: $maxstretch + 100px;
   }
   //tags list
   #content .taglist .taglist_tag {
-      padding: 5px;
+    padding: 5px;
   }
   //recent posts
   #content #recent_posts-container {
@@ -117,12 +117,17 @@ $moblayoutswitch: $maxstretch + 100px;
   }
 
   .taglist .taglist_button {
-    @include type.tags-type($mob:true)
+    @include type.tags-type($mob: true)
   }
 
   .taglist .taglist_count {
-    @include type.date-type($mob:true)
+    @include type.date-type($mob: true)
   }
 
-
+  form#contact {
+    #contact_message {
+      //@include type.para_text-type($mob: true);
+      //keep this unset, text is fine at desktop width
+    }
+  }
 }

@@ -6,7 +6,8 @@ Description: "Home page"
 ---
 
 
-# Why do you own a blog?
+# About
  
-I enjoy tinkering and playing with cool tech, I thought a blog would be a good way to showcase the stuff I'm doing, so I made one.
+I enjoy tinkering with weird and wonderful software and using the cool tech, I started this blog to showcase my interest in these and maybe spark somebody elses.
+
 # Recent Posts

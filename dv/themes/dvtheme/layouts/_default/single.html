@@ -24,9 +24,9 @@
     <div class="tags">
         <span>Tags:</span>
         {{range $tag := .Params.Tags}}
-        <div class="tag">
+        <a class="tag" href="/tags/{{$tag}}">
             {{$tag}}
-        </div>
+        </a>
 
         {{end}}
     </div>

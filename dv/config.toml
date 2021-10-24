@@ -48,5 +48,3 @@ googleAnalytics = 'G-3D12WWY32C'
     img = '/static/:filename'
     js = '/static/:filename'
 
-
-

@@ -3,27 +3,24 @@
 
     {{- partial "head.html" . -}}
 
-    <body class="lighttheme">
+    <body class="darktheme">
     <script>
         document.body.classList.add('notransition'); // Disable transitions
-        if (sessionStorage.getItem("theme") == "darktheme"){
-
-            //dark theme
-            sessionStorage.setItem("theme","darktheme");
-            document.body.classList.add("darktheme");
-
-            document.body.classList.remove("lighttheme");
-        } else {
+        if (sessionStorage.getItem("theme") == "lighttheme"){
             //light theme
             sessionStorage.setItem("theme","lighttheme");
             document.body.classList.add("lighttheme");
 
             document.body.classList.remove("darktheme");
-        }
+        } else {
+            //dark theme
+            sessionStorage.setItem("theme","darktheme");
+            document.body.classList.add("darktheme");
 
+            document.body.classList.remove("lighttheme");
+        }
         document.body.offsetHeight; // Trigger a reflow, flushing the CSS changes
         document.body.classList.remove('notransition'); // Re-enable transitions
-
     </script>
 
         <div id="content_header-Container">

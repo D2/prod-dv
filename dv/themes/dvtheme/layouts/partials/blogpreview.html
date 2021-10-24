@@ -1,0 +1,12 @@
+<a href="{{ .Permalink }}" class="blogpreview">
+
+    <span class="blogpreview_date">{{ .Date | time.Format "Jan 2, 2006" }}</span>
+
+    <img class ="blogpreview_cover" srcset="{{.Params.Cover}} 250w" alt="">
+
+    <div class="blogpreview_outline-container">
+        <span class="blogpreview_title">{{ .Title }}</span>
+
+        <span class="blogpreview_author">by <span class="underline">{{.Params.Author}}</span></span>
+    </div>
+</a>

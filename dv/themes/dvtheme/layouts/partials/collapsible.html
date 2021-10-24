@@ -1,0 +1,30 @@
+<script>
+
+var coll = document.getElementsByClassName("taglist_collapsible");
+var i;
+{{if hasPrefix .RelPermalink "/tags/" }}
+var x = coll[0].nextElementSibling.childElementCount;
+var h = Math.round(x/3*75) +"px";
+coll[0].nextElementSibling.style.maxHeight = h;
+coll[0].innerHTML = "Filter By Tag (Click to close)";
+coll[0].nextElementSibling.style.overflow= "shown";
+coll[0].classList.toggle("active");
+{{end}}
+coll[0].addEventListener("click", function() {
+this.classList.toggle("active");
+console.log("test")
+var content = this.nextElementSibling;
+//finding tag amount so i can set the correct maxheight
+var x = content.childElementCount;
+var h = Math.round(x/3*75) +"px";
+if (content.style.maxHeight  === h) {
+this.innerHTML = "Filter By Tag (Click to open)";
+content.style.maxHeight = 0;
+content.style.overflow= "hidden";
+} else {
+content.style.maxHeight = h;
+this.innerHTML = "Filter By Tag (Click to close)";
+content.style.overflow= "shown";
+}
+});
+</script>

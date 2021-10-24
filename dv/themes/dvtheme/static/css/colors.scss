@@ -7,8 +7,8 @@ $txt-main: #000000;
 
 
 $error: red;
-
-
+$accent: #b768ef;
+$accent-bright: #c2a0f6;
 $bg-secondary: rgba(125, 125, 125, 0.1);
 
 $dark-grey: #202023;
@@ -39,7 +39,7 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
   --footer-link-hover-bg:transparent;
   --footer-link-hover-clr:#{$big-opacity-mask};
   //nav
-  --logo-clr:#{$big-opacity-mask};
+  --logo-clr:#{$med-opacity-mask};
 
   --nav-link-clr:#{$med-opacity-mask};
 
@@ -52,13 +52,21 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
   --nav-link-active-hover-clr:#{$black};
   --nav-link-active-hover-bg:#{$white};
 
+  --nav-link-accent-bg:#{$accent};
   //single
   --single-title-bg:#{$small-opacity-mask};
   --single-title-clr:#{$big-opacity-mask};
   --single-para-clr:#{$text-opacity-mask};
   --single-author-clr:#{$text-opacity-mask};
   --single-date-clr:#{$big-opacity-mask};
-  --single-tags-clr:#{$big-opacity-mask};
+
+  --single-link-clr:#{$accent};
+  --single-link-hover-clr:#{$accent-bright};
+
+  --single-tags-clr:#{$med-opacity-mask};
+  --single-tags-hover-clr:#{$big-opacity-mask};
+
+  --single-tags-span-clr:#{$big-opacity-mask};
   //list
   --tag-clr:#{$text-opacity-mask};
   --tag-bg:#{$bg-secondary};
@@ -80,8 +88,14 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
   --blog-preview-author-clr:#{$med-opacity-mask};
   --blog-preview-title-clrL:#{$light-black};
 
+  //contact
+  --contact-message-clr:#{$big-opacity-mask};
+  --contact-message-bg:#{$small-opacity-mask};
+  --contact-message-submit-button-bg: #{$med-opacity-mask};
+  --contact-message-submit-button-clr: #{$med-opacity-mask};
 
-
+  --contact-input-clr: #{$big-opacity-mask};
+  --contact-input-bg: #{$small-opacity-mask};
 }
 
 
@@ -135,6 +149,14 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
 
   --blog-preview-author-clr:#{$light-black};
   --blog-preview-title-clrL:#{$light-black};
+  //contact
+  --contact-message-clr:#{$light-black};
+  --contact-message-bg:#{$offwhite};
 
+  --contact-message-submit-button-bg: transparent;
+  --contact-message-submit-button-clr: #{$light-black};
 
+  --contact-input-clr: #{$light-black};
+  --contact-input-bg: #{$offwhite};
 }
+
