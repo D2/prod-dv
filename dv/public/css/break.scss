@@ -7,7 +7,9 @@ $moblayoutswitch: $maxstretch + 100px;
 
 @media only screen and (max-width: $maxstretch) {
   //stuff
-
+  body h1 {
+    width: calc(100% - 30px);
+  }
   //single
   .blogpost-container .postdate {
     margin-right: 15px;
@@ -21,7 +23,7 @@ $moblayoutswitch: $maxstretch + 100px;
   }
   //tags list
   #content .taglist .taglist_tag {
-      padding: 5px;
+    padding: 5px;
   }
   //recent posts
   #content #recent_posts-container {
@@ -32,6 +34,7 @@ $moblayoutswitch: $maxstretch + 100px;
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr;
+
 
     #logo {
       @include type.logo-type($mob: true);
@@ -47,6 +50,9 @@ $moblayoutswitch: $maxstretch + 100px;
         padding: 5px;
       }
     }
+  }
+  ul li#themeSwitch {
+    grid-row: 1;
   }
   //footer
 
@@ -87,7 +93,9 @@ $moblayoutswitch: $maxstretch + 100px;
     @include type.nav_link-type($mob: true);
   }
   footer ul li {
-    @include type.heading_1-type($mob: true);
+    //@include type.footer_link-type($mob: true);
+    //keep this unset, text is fine at desktop width
+
   }
 
   .blogpreview_date {
@@ -109,12 +117,17 @@ $moblayoutswitch: $maxstretch + 100px;
   }
 
   .taglist .taglist_button {
-    @include type.tags-type($mob:true)
+    @include type.tags-type($mob: true)
   }
 
   .taglist .taglist_count {
-    @include type.date-type($mob:true)
+    @include type.date-type($mob: true)
   }
 
-
+  form#contact {
+    #contact_message {
+      //@include type.para_text-type($mob: true);
+      //keep this unset, text is fine at desktop width
+    }
+  }
 }

@@ -60,12 +60,31 @@ I built the blog using hugo, a static site generator focused on being really qui
 
 
 </head>
-<body>
+<body class="darktheme">
+    <script>
+        document.body.classList.add('notransition'); 
+        if (sessionStorage.getItem("theme") == "lighttheme"){
+            
+            sessionStorage.setItem("theme","lighttheme");
+            document.body.classList.add("lighttheme");
+
+            document.body.classList.remove("darktheme");
+        } else {
+            
+            sessionStorage.setItem("theme","darktheme");
+            document.body.classList.add("darktheme");
+
+            document.body.classList.remove("lighttheme");
+        }
+        document.body.offsetHeight; 
+        document.body.classList.remove('notransition'); 
+    </script>
+
         <div id="content_header-Container"><header>
 
     <nav>
         <span id="logo">
-            <a href="/">DV.WTF</a>
+            <a href="/">DV</a>
         </span>
 
         <ul>
@@ -97,6 +116,9 @@ I built the blog using hugo, a static site generator focused on being really qui
             
 
         </ul>
+        <span id="themeSwitch">
+            <img src="/img/darktheme.svg" alt="Change theme">
+        </span>
     </nav>
 
 
@@ -113,7 +135,7 @@ I built the blog using hugo, a static site generator focused on being really qui
     </div>
 
     <div class="coverimg">
-        <img src="/img/resized/FirstBlogCoverresized" alt="Why I have a blog">
+        <img src="/img/resized/FirstBlogCoverresized.png" alt="Why I have a blog">
     </div>
 
 
@@ -122,31 +144,31 @@ I built the blog using hugo, a static site generator focused on being really qui
 
 
     <p>I finally decided to pull the trigger and setup a blog. I&rsquo;ve been taking on some reasonably interesting projects aswell as rebuilding my home-lab, this seemed like a good way to keep a running log that might also be useful for somebody else.</p>
-<p>I built the blog using hugo, a static site generator focused on being <em>really</em> quick and incredibly easy to use. If you need a reference frame for how easy hugo is to use, look no further than this blog which was setup in under a day.</p>
-<p>I&rsquo;m planning on making another post later down the line about my experiences using hugo and maybe share some insight/useful info.</p>
+<p>I built the blog using <a href="https://gohugo.io">hugo</a>, a static site generator focused on being <em>really</em> quick and incredibly easy to use. If you need a reference frame for how easy hugo is to use, look no further than this blog which was setup in under a day.</p>
+<p>I&rsquo;m planning on making another post later down the line about my experiences using <a href="https://gohugo.io">hugo</a> and maybe share some insight/useful info.</p>
 
 
     <div class="tags">
         <span>Tags:</span>
         
-        <div class="tag">
+        <a class="tag" href="/tags/HUGO">
             HUGO
-        </div>
+        </a>
 
         
-        <div class="tag">
+        <a class="tag" href="/tags/JS">
             JS
-        </div>
+        </a>
 
         
-        <div class="tag">
+        <a class="tag" href="/tags/WEB">
             WEB
-        </div>
+        </a>
 
         
-        <div class="tag">
+        <a class="tag" href="/tags/DESIGN">
             DESIGN
-        </div>
+        </a>
 
         
     </div>
@@ -157,7 +179,6 @@ I built the blog using hugo, a static site generator focused on being really qui
 
             </div>
         </div><footer>
-
     <ul>
         
             <li><a href=" https://linktr.ee/david">LINKTREE</a></li>
@@ -166,9 +187,11 @@ I built the blog using hugo, a static site generator focused on being really qui
         
             <li><a href=" https://github.com/D2/prod-dv">[SITESOURCE]</a></li>
         
-
-
-
     </ul>
 </footer></body>
+<script src="/js/theme.js">
+
+</script>
 </html>
+
+

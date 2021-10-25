@@ -3,6 +3,8 @@
 
 .author {
   @include type.author-type;
+  color: var(--single-author-clr);
+
 }
 
 
@@ -11,8 +13,8 @@
   h1#title {
     font-size: 35px;
     padding: 50px 0 50px 0;
-    //background-color: colors.$bg-secondary;
-    //color: colors.$black;
+    background-color: var(--single-title-bg);
+    color: var(--single-title-clr);
     margin-bottom: 25px;
     border-radius: 0;
 
@@ -37,28 +39,42 @@
     @include type.date-type;
     margin-left: 15px;
     margin-bottom: 25px;
+    color: var(--single-date-clr);
   }
 
   p {
     margin-bottom: 25px;
-    color: colors.$light-black;
+    color: var(--single-para-clr);
 
     em {
       @include type.italic_emphasis-type;
     }
-
+    a {
+      text-decoration: none ;
+      &:link,  &:visited{
+      color: var(--single-link-clr);
+      }
+      &:focus, &:hover {
+        color: var(--single-link-hover-clr);
+      }
+    }
   }
   .tags {
       display: flex;
       margin: 55px 0 20px 15px;
       gap: 20px;
       flex-wrap: wrap;
-
+      color: var(--single-tags-span-clr);
       @include type.tags-type;
-    .tag {
-
+      a.tag {
+        &:visited, &:link {
+          color: var(--single-tags-clr);
+        }
+        &:hover, &:focus {
+          color: var(--single-tags-hover-clr);
+        }
+      }
     }
-  }
   margin-bottom: 50px;
 }
 

@@ -1,21 +1,42 @@
 @use 'type';
 @use 'colors';
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
 nav {
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
   padding-bottom: 20px;
+  grid-column-gap: 60px;
   #logo {
     @include type.logo-type();
-    //text-shadow:  -7px 18px rgb(0 0 0 / 35%);
+    ////text-shadow:  -7px 18px rgb(0 0 0 / 35%);
     margin-left: 50px;
+
+
+
+
 
 
     a {
       text-decoration: none;
       &:visited,
       &:link {
-        color: colors.$black
+        color: var(--logo-clr);
       }
 
 
@@ -35,39 +56,74 @@ nav {
         padding: 15px;
 
         text-decoration: none;
-
+        transition: 100ms;
         &:visited,
         &:link {
-          color: colors.$black
+          color: var(--nav-link-clr);
         }
 
         &:focus,
         &:hover {
           transition: 250ms;
-          color: colors.$white;
-          background-color: colors.$black;
+          color: var(--nav-link-hover-clr);
+          background-color: var(--nav-link-hover-bg);
+
+          box-shadow:  5px 5px 12px 6px rgb(10 10 10 / 70%);
         }
       }
     }
   }
 }
 
+nav #themeSwitch{
+  position: absolute;
+  top:15px;
+  right:15px;
+  img {
+    filter: none;
+    height: 50px;
+    transition: transform 250ms;
+  }
+}
+nav #themeSwitch.darktheme img {
+  filter: invert(1);
+  transform: rotate(180deg);
+}
 nav ul li.active { //active link
+  position: relative;
+
 
   a {
     padding: 15px;
-    color: colors.$bg-clr;
-    background-color: colors.$txt-main;
-
+    color: var(--nav-link-active-clr);
+    background-color: var(--nav-link-active-bg);
+    box-shadow:  5px 5px 15px 4px rgb(10 10 10 / 40%);
     &:visited,
     &:link {
-      color: colors.$bg-clr;
+      color: var(--nav-link-active-clr);
     }
     &:focus,
     &:hover {
 
-      color: colors.$black;
-      background-color: colors.$bg-secondary;
+      color: var(--nav-link-active-hover-clr);
+      background-color: var(--nav-link-active-hover-bg);
+    }
+
+
+    &::after {
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      content: '';
+      background-color: var(--nav-link-accent-bg);
+
+      bottom: -15px;
+      left: 0;
+
     }
   }
 }
+.css-selector {
+
+}
+

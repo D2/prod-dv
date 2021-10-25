@@ -12,12 +12,17 @@
   justify-content: left;
 
   margin: 0 15px 0 15px;
-
   max-height: 0;
   overflow: hidden;
 
   transition: 300ms;
   &_collapsible {
+    cursor:pointer;
+    box-shadow: none;
+    border: 1px solid var(--list-collapsible-border);
+    color: var(--list-collapsible-clr);
+    background: var(--list-collapsible-bg);
+    user-select: none;
   }
   &_collapsible.active{
 
@@ -25,9 +30,10 @@
   }
   &_tag {
 
-    background-color: colors.$bg-secondary;
+    background-color: var(--tag-bg);
     padding: 20px;
     display: flex;
+
   }
   &_button {
     display: flex;
@@ -37,11 +43,12 @@
       text-decoration: none;
     }
     a:link, a:visited {
-      color: colors.$black;
+      color: var(--tag-clr);
 
     }
   }
   &_count {
     @include type.date-type;
+    color: var(--tag-count-clr);
   }
 }

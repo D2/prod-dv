@@ -56,12 +56,31 @@
 
 
 </head>
-<body>
+<body class="darktheme">
+    <script>
+        document.body.classList.add('notransition'); 
+        if (sessionStorage.getItem("theme") == "lighttheme"){
+            
+            sessionStorage.setItem("theme","lighttheme");
+            document.body.classList.add("lighttheme");
+
+            document.body.classList.remove("darktheme");
+        } else {
+            
+            sessionStorage.setItem("theme","darktheme");
+            document.body.classList.add("darktheme");
+
+            document.body.classList.remove("lighttheme");
+        }
+        document.body.offsetHeight; 
+        document.body.classList.remove('notransition'); 
+    </script>
+
         <div id="content_header-Container"><header>
 
     <nav>
         <span id="logo">
-            <a href="/">DV.WTF</a>
+            <a href="/">DV</a>
         </span>
 
         <ul>
@@ -93,13 +112,16 @@
             
 
         </ul>
+        <span id="themeSwitch">
+            <img src="/img/darktheme.svg" alt="Change theme">
+        </span>
     </nav>
 
 
 </header><div id="content">
 
-<h1 id="why-do-you-own-a-blog">Why do you own a blog?</h1>
-<p>I enjoy tinkering and playing with cool tech, I thought a blog would be a good way to showcase the stuff I&rsquo;m doing, so I made one.</p>
+<h1 id="about">About</h1>
+<p>I enjoy tinkering with weird and wonderful software and using the cool tech, I started this blog to showcase my interest in these and maybe spark somebody elses.</p>
 <h1 id="recent-posts">Recent Posts</h1>
 
 
@@ -107,20 +129,18 @@
 
 
 
-<div id="recent_posts-container">
-    <a href="http://DV.WTF/posts/why-i-have-a-blog/" class="blogpreview">
+<div id="recent_posts-container"><a href="http://DV.WTF/posts/why-i-have-a-blog/" class="blogpreview">
 
-        <span class="blogpreview_date">Oct 21, 2021</span>
+    <span class="blogpreview_date">Oct 21, 2021</span>
 
-        <img class ="blogpreview_cover" srcset="/img/resized/FirstBlogCoverresized 250w" alt="">
+    <img class ="blogpreview_cover" srcset="/img/resized/FirstBlogCoverresized.png 250w" alt="">
 
-        <div class="blogpreview_outline-container">
-            <span class="blogpreview_title">Why I have a blog</span>
+    <div class="blogpreview_outline-container">
+        <span class="blogpreview_title">Why I have a blog</span>
 
-            <span class="blogpreview_author">by David</span>
-        </div>
-    </a>
-    
+        <span class="blogpreview_author">by <span class="underline">David</span></span>
+    </div>
+</a>
 
 </div>
 
@@ -128,10 +148,26 @@
 
 
 
+<h1 id="contacttitle">Contact</h1>
+<form id="contact" name="contact" method="POST" data-netlify="true">
+    <p id="contact_name">
+        <label>Your Name: <input type="text" name="name" /></label>
+    </p>
+    <p id="contact_email">
+        <label>Your Email: <input type="email" name="email" /></label>
+    </p>
+    <p id="contact_message">
+        <label>Message: <textarea name="message"></textarea></label>
+    </p>
+    <p id="contact_submit">
+        <button>Send</button>
+    </p>
+</form>
+
+
 
             </div>
         </div><footer>
-
     <ul>
         
             <li><a href=" https://linktr.ee/david">LINKTREE</a></li>
@@ -140,9 +176,11 @@
         
             <li><a href=" https://github.com/D2/prod-dv">[SITESOURCE]</a></li>
         
-
-
-
     </ul>
 </footer></body>
+<script src="/js/theme.js">
+
+</script>
 </html>
+
+
