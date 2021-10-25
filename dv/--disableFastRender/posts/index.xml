@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on DV.WTF</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on DV.WTF</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Oct 2021 00:53:59 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why I have a blog</title>
+      <link>http://localhost:1313/posts/why-i-have-a-blog/</link>
+      <pubDate>Thu, 21 Oct 2021 00:53:59 +0100</pubDate>
+      
+      <guid>http://localhost:1313/posts/why-i-have-a-blog/</guid>
+      <description>I finally decided to pull the trigger and setup a blog. I&amp;rsquo;ve been taking on some reasonably interesting projects aswell as rebuilding my home-lab, this seemed like a good way to keep a running log that might also be useful for somebody else.
+I built the blog using hugo, a static site generator focused on being really quick and incredibly easy to use. If you need a reference frame for how easy hugo is to use, look no further than this blog which was setup in under a day.</description>
+    </item>
+    
+  </channel>
+</rss>

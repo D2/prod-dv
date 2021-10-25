@@ -1,0 +1,133 @@
+@use 'colors';
+@use 'type';
+
+
+$maxstretch: 1000px;
+$moblayoutswitch: $maxstretch + 100px;
+
+@media only screen and (max-width: $maxstretch) {
+  //stuff
+  body h1 {
+    width: calc(100% - 30px);
+  }
+  //single
+  .blogpost-container .postdate {
+    margin-right: 15px;
+    text-align: right;
+  }
+  .blogpost-container .coverimg {
+    float: none;
+    margin: auto;
+    width: calc(100% - 30px);
+    max-width: unset;
+  }
+  //tags list
+  #content .taglist .taglist_tag {
+    padding: 5px;
+  }
+  //recent posts
+  #content #recent_posts-container {
+    padding-bottom: 35px;
+  }
+  //header
+  header nav {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+
+
+    #logo {
+      @include type.logo-type($mob: true);
+      margin: 0 auto 20px auto;
+      //text-shadow: none;
+    }
+
+    ul {
+      justify-content: space-around;
+      max-width: unset;
+
+      li a {
+        padding: 5px;
+      }
+    }
+  }
+  ul li#themeSwitch {
+    grid-row: 1;
+  }
+  //footer
+
+  footer {
+  }
+  footer ul {
+    height: 100%;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  //mobile font sizes
+  h1 {
+    @include type.heading_1-type($mob: true);
+  }
+  .blogpost-container p {
+    //@include type.para_text-type($mob: true);
+    //keep this unset, text is fine at desktop width
+  }
+  .blogpost-container .author {
+    @include type.author-type;
+  }
+
+  .error {
+    @include type.error-type($mob: true);
+  }
+  .default-button {
+    @include type.button-type($mob: true);
+  }
+
+  header nav #logo {
+    @include type.logo-type($mob: true);
+  }
+
+  nav ul li {
+    @include type.nav_link-type($mob: true);
+  }
+  footer ul li {
+    //@include type.footer_link-type($mob: true);
+    //keep this unset, text is fine at desktop width
+
+  }
+
+  .blogpreview_date {
+    @include type.preview_date-type($mob: true);
+  }
+  .blogpreview_author {
+    @include type.author-type($mob: true);
+  }
+  .blogpreview_title {
+    @include type.preview_title-type($mob: true);
+  }
+  .blogpost-container p em {
+    //@include type.italic_emphasis-type($mob:true)
+    //keep this unset, text is fine at desktop width
+  }
+  .blogpost-container .tags {
+    //@include type.tags-type($mob:true)
+    //keep this unset, text is fine at desktop width
+  }
+
+  .taglist .taglist_button {
+    @include type.tags-type($mob: true)
+  }
+
+  .taglist .taglist_count {
+    @include type.date-type($mob: true)
+  }
+
+  form#contact {
+    #contact_message {
+      //@include type.para_text-type($mob: true);
+      //keep this unset, text is fine at desktop width
+    }
+  }
+}

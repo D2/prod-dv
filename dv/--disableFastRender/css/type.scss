@@ -1,0 +1,216 @@
+@use 'colors';
+//font sizes
+$massive_size: 77px;
+$massive_size-mob: 45px;
+$large_size: 33px;
+$large_size-mob: 22px;
+$med_size: 25px;
+$med_size-mob: 18px;
+$small_size: 18px;
+$small_size-mob: 18px;
+// Why did I use mixins here?
+// because its helped me DRY a little bit
+//
+// All type mixins have a default fallback of
+// mob = false
+//
+// if mob:true is passed in, it will output the mobile sized font
+//
+// if mob:false,
+// it will output full desktop stylings, I only need to output the mobile font size as the rest will still be there, will be overwriting the font size in media queries(keep it simple)
+@mixin logo-type($mob:false) {
+  @if($mob) {
+    font-size:$massive_size-mob;
+  }
+  @else {
+    font-size:$massive_size;
+    font-family: 'Anton', sans-serif;
+  }
+}
+
+@mixin heading_1-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family:  Prohibition, sans-serif;
+    font-weight: 400;
+  }
+
+}
+
+@mixin nav_link-type($mob:false) {
+  @if($mob) {
+    font-size:$large_size-mob;
+  }
+  @else {
+    font-size:$large_size;
+    font-family: 'Prohibition', sans-serif;
+    font-weight: 400;
+  }
+
+}
+@mixin footer_link-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: 'Prohibition', sans-serif;
+    font-weight: 400;
+  }
+
+}
+
+
+
+
+@mixin para_text-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: 'P22 Underground', sans-serif;
+    font-weight: 400;
+  }
+
+
+}
+
+@mixin error-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family:  'Rigid Square', sans-serif;
+    font-weight: 600;
+    color: colors.$error;
+  }
+
+}
+
+
+@mixin button-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family:  'Rigid Square', sans-serif;
+    font-weight: 600;
+  }
+
+}
+
+@mixin author-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: roc-grotesk, sans-serif;
+
+    font-weight: 500;
+
+    font-style: normal;}
+
+}
+
+@mixin date-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: mono45-headline, monospace;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
+}
+
+
+@mixin italic_emphasis-type($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob +1px !important;
+  }
+  @else {
+    font-size: $med_size;
+    font-family: rigid-square, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+}
+
+
+@mixin preview_title-type ($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    //font-family: Prohibition, sans-serif;
+    //font-weight: 400;
+    //font-style: normal;
+
+    //font-family: hoss-round, sans-serif;
+    //font-weight: 400;
+    //font-style: normal;
+
+    font-size:$med_size;
+    font-family: roc-grotesk, sans-serif;
+
+    font-weight: 500;
+
+    font-style: normal;
+    letter-spacing: 1.5px;
+
+
+  }
+}
+@mixin preview_author-type ($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: hoss-round, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+
+
+  }
+}
+@mixin preview_date-type ($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: Prohibition, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+  }
+}
+
+@mixin tags-type ($mob:false) {
+  @if($mob) {
+    font-size:$med_size-mob;
+  }
+  @else {
+    font-size:$med_size;
+    font-family: Prohibition, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+
+  }
+}
