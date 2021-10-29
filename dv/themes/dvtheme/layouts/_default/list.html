@@ -30,9 +30,9 @@
 <!--{{.RelPermalink}}-->
     {{if hasPrefix .RelPermalink "/tags/" }}
 
-    <h1>Posts Tagged with <span>
+    <h2>Posts Tagged with <span>
         (&nbsp;{{$tmp := strings.Replace .RelPermalink "/tags/" ""}}{{strings.Replace $tmp "/" ""}}&nbsp;)
-    </span></h1>
+    </span></h2>
 
     {{else}}
     <h1>All Posts</h1>
@@ -42,10 +42,36 @@
 <div id="recent_posts-container">
 
     <!-- Ranges through content/posts/*.md -->
-    {{ range .Pages }}
+    {{ range .Paginator.Pages }}
     {{- partial "blogpreview.html" . -}}
     {{ end }}
+
+
 </div>
+<!-- Code starts here -->
+<!-- Shamelessly stolen from this dude https://www.youtube.com/watch?v=BSeYDNhTRB0-->
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+<!--        {{ if $pag.HasPrev }}-->
+<!--        <li class="page-item"><a href="{{ $pag.Prev.URL }}" rel="prev" class="page-link">&laquo; Prev</a></li>-->
+<!--        {{ end }}-->
+        {{ range $pag.Pagers }}
+        {{ if eq . $pag }}
+        <li class="page-item active"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
+        {{ else }}
+        <li class="page-item"><a href="{{ .URL }}" class="page-link">{{ .PageNumber }}</a></li>
+        {{ end }}
+        {{ end }}
+
+        {{ if $pag.HasNext }}
+        <li class="page-item"><a href="{{ $pag.Next.URL }}" rel="next" class="page-link">Next &raquo;</a></li>
+        {{ end }}
+    </ul>
+</nav>
+{{ end }}
+<!-- Code ends here -->
 {{end}}
 
 

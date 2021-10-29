@@ -5,7 +5,7 @@
 <!--Find amount of blogs-->
 {{$len :=  len (where .Site.RegularPages "Section" "posts") }}
 <!---->
-
+<h2>Recent Posts</h2>
 <div id="recent_posts-container">
 
     {{- range ( where site.RegularPages "Section" "posts" | first 3 ) }}
@@ -18,27 +18,13 @@
 
 {{if gt $len 3}}
 
-<form id="post_archive-button">
-    <input class="default-button"type="button" value="Post Archive" onclick="history.back()">
-</form>
+<div id="post_archive-button">
+    <a href="/posts" class="default-button">Post Archive</a>
+</div>
 
 {{end}}
 
-<h1 id="contacttitle">Contact</h1>
-<form id="contact" name="contact" method="POST" data-netlify="true">
-    <p id="contact_name">
-        <label>Your Name: <input type="text" name="name" /></label>
-    </p>
-    <p id="contact_email">
-        <label>Your Email: <input type="email" name="email" /></label>
-    </p>
-    <p id="contact_message">
-        <label>Message: <textarea name="message"></textarea></label>
-    </p>
-    <p id="contact_submit">
-        <button>Send</button>
-    </p>
-</form>
+
 
 
 {{end}}

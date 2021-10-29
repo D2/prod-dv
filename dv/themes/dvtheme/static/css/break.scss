@@ -8,7 +8,10 @@ $moblayoutswitch: $maxstretch + 100px;
 @media only screen and (max-width: $maxstretch) {
   //stuff
   body h1 {
-    width: calc(100% - 30px);
+    width: calc(100% - 60px);
+  }
+  #content h1#contacttitle {
+    margin-top: 50px;
   }
   //single
   .blogpost-container .postdate {
@@ -38,8 +41,9 @@ $moblayoutswitch: $maxstretch + 100px;
 
     #logo {
       @include type.logo-type($mob: true);
-      margin: 0 auto 20px auto;
+      margin: 0 auto 20px 25px;
       //text-shadow: none;
+      height: 45px;
     }
 
     ul {
@@ -51,8 +55,12 @@ $moblayoutswitch: $maxstretch + 100px;
       }
     }
   }
-  ul li#themeSwitch {
+  nav #themeSwitch {
     grid-row: 1;
+    top: 20px;
+    img {
+      height: 45px;
+    }
   }
   //footer
 

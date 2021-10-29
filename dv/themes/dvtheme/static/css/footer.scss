@@ -18,7 +18,7 @@ footer {
     max-width: 550px;
     margin: auto;
     gap: 5px;
-
+    user-select: none;
     li {
       a {
         //padding to make the border bigger when color change

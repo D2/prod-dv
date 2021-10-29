@@ -1,11 +1,10 @@
 ---
-title: "Why I have a blog"
+title: "Why I have a blog2"
 date: 2021-10-21T00:53:59+01:00
-cover: "/img/resized/WhyCover_resized.png"
-draft: false
+cover: "/img/resized/FirstBlogCoverresized.png"
+draft: true
 author: "David"
 tags: ["HUGO", "JS", "WEB", "DESIGN"]
-toc: false
 ---
 
 

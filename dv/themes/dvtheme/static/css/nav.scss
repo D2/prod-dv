@@ -15,33 +15,37 @@
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
-
+.darktheme nav a#logo img{
+  filter: invert(1);
+  transition: 250ms;
+}
 nav {
+  z-index: 1000;
+
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  padding-bottom: 20px;
+  grid-template-rows: auto;
+  padding: 10px 0 15px 0;
   grid-column-gap: 60px;
-  #logo {
-    @include type.logo-type();
-    ////text-shadow:  -7px 18px rgb(0 0 0 / 35%);
+  user-select: none;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(40px) brightness(0.9);
+  margin-top: 25px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  a#logo {
     margin-left: 50px;
+    height: 60px;
 
+    text-decoration: none;
 
-
-
-
-
-    a {
-      text-decoration: none;
-      &:visited,
-      &:link {
-        color: var(--logo-clr);
+      img {
+        height: 100%;
+        fill: white;
       }
-
-
-    }
-
   }
   ul {
     list-style-type: none;

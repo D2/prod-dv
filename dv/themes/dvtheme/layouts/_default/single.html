@@ -1,6 +1,14 @@
 {{define "main"}}
 <div class="blogpost-container">
-    <h1 id="title">{{ .Title }}</h1>
+
+    {{if ne .Title "Contact"}}
+    <div class="title-container">
+        <h1 id="title">{{ .Title }}</h1>
+        <div class="coverimg">
+            <img src="{{.Params.Cover}}" alt="{{ .Title}}">
+        </div>
+
+    </div>
 
     <div class="author">
         by {{.Params.Author}}
@@ -9,29 +17,60 @@
     <div class="postdate">
         {{ .Date | time.Format ":date_long" }}
     </div>
+    {{if .Params.toc}}
+    {{partial "toc" .}}
+    {{end}}
 
-    <div class="coverimg">
-        <img src="{{.Params.Cover}}" alt="{{ .Title}}">
-    </div>
-
-
-
-
-
+    {{end}}
 
     {{.Content}}
 
+    {{if ne .Title "Contact"}}
     <div class="tags">
         <span>Tags:</span>
         {{range $tag := .Params.Tags}}
-        <a class="tag" href="/tags/{{$tag}}">
+        <a class="tag" href="/tags/{{lower $tag}}">
             {{$tag}}
         </a>
 
         {{end}}
     </div>
-
+    {{end}}
 
 </div>
+
+<script>
+
+
+    const open = (b, c) => {
+        b.innerHTML = "CONTENTS [CLICK TO CLOSE]"
+        c.style.height = contentHeight + "px";
+        c.style.paddingBottom =  "20px";
+        c.style.overflow = "visible";
+    }
+    const close = (b, c) => {
+        b.innerHTML = "CONTENTS [CLICK TO OPEN]"
+        c.style.paddingBottom =  "0px";
+        c.style.height = "0px";
+        c.style.overflow = "hidden";
+    }
+
+    var ContentsButton = document.getElementsByClassName("contents_collapsible")[0];
+    var ContentsContent = ContentsButton.nextElementSibling;
+
+    contentHeight = ContentsContent.scrollHeight;
+
+    ContentsButton.addEventListener("click", function CollapseContents() {
+            if (ContentsContent.style.height == "0px" || ContentsContent.style.height == null ) {
+                open(ContentsButton , ContentsContent);
+            } else {
+                close(ContentsButton , ContentsContent);
+            }
+
+
+        }
+    )
+
+</script>
 
 {{end}}

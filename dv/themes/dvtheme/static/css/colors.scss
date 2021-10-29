@@ -21,15 +21,21 @@ $offwhite-secondary: rgb(255 253 250 / 78%);
 $big-opacity-mask: rgba(255, 255, 255, 0.95);
 $med-opacity-mask: rgba(255, 255, 255, 0.45);
 $small-opacity-mask: rgba(255, 255, 255, 0.05);
-$text-opacity-mask: rgba(255, 255, 255, 0.73);
+$text-opacity-mask: rgba(255, 255, 255, 0.90);
 
 .darktheme {
   --border: #{$med-opacity-mask};
   --h1-bg: #{$small-opacity-mask};
   --h1-clr: #{$big-opacity-mask};
+  --h2-bg: transparent;
+  --h2-clr: #{$big-opacity-mask};
   --para-text-clr: #{$big-opacity-mask};
-  --body-bg:  #{$dark-grey};
-
+  //--body-bg:  #{$dark-grey};
+  --body-bg: #27292D;
+  //scrollbar
+  --scrollbar-border-bg: #{$small-opacity-mask};
+  --scrollbar-bg: #{$med-opacity-mask};
+  --scrollbar-hover-bg: #{$big-opacity-mask};
   //footer
   --footer-bg: #{$small-opacity-mask};
 
@@ -77,8 +83,8 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
 
 
   //404
-  --error-bg:#{$white};
-  --error-clr:#{$light-black};
+  --error-bg:#{$small-opacity-mask};
+  --error-clr:#{$text-opacity-mask};
 
   //preview
   --blog-preview-bg:#{$small-opacity-mask};
@@ -101,8 +107,10 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
 
 .lighttheme {
   --border: #{$light-black};
-  --h1-bg: #{$white};
-  --h1-clr: #{$black};
+  --h1-bg: #{$black}; //h1 bg is a gradient, just used as fallback if they're an IE nerd
+  --h1-clr: #{$white};
+  --h2-bg: #{$white};
+  --h2-clr: #{$light-black};
   --para-text-clr: #{$light-black};
   //footer
   --footer-bg: inherit;
@@ -128,7 +136,7 @@ $text-opacity-mask: rgba(255, 255, 255, 0.73);
 
   //single
   --single-title-bg:#{$white};
-  --single-title-clr:#{$light-black};
+  --single-title-clr:#{$white};
   --single-para-clr:#{$light-black};
   //list
   --tag-clr:#{$light-black};

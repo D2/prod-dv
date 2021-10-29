@@ -3,48 +3,54 @@ languageCode = 'en-us'
 title = 'DV.WTF'
 theme = 'dvtheme'
 
-googleAnalytics = 'G-3D12WWY32C'
+paginate = 6
+
 [params]
 # default fallback description
     defaultDescription = "A blog about me learning how to do random stuff and posting it onto the internet."
     fontImports = [
     'https://use.typekit.net/nhu3gfn.css'
     ]
+
     [params.menu]
-            [[params.menu.nav]]
-            name = "Home"
-            URL = "/"
-            weight = 4
+                [[params.menu.nav]]
+                identifier = "Home"
+                name = "Home"
+                URL = "/"
+                weight = 4
 
-            [[params.menu.nav]]
-            name = "Posts"
-            URL = "/posts/"
-            weight = 1
+                [[params.menu.nav]]
+                identifier = "Posts"
 
-            [[params.menu.nav]]
-            name = "Github"
-            URL = "https://github.com/d2"
-            weight = 2
+                name = "Posts"
+                URL = "/posts/"
+                weight = 1
 
+                [[params.menu.nav]]
+                identifier = "Github"
+                name = "Github"
+                URL = "https://github.com/d2"
+                weight = 2
 
+                [[params.menu.footer]]
+                identifier = "LINKTREE"
+                name = "LINKTREE"
+                URL = "https://linktr.ee/david"
+                weight = 4
 
-            [[params.menu.footer]]
-            name = "LINKTREE"
-            URL = "https://linktr.ee/david"
-            weight = 4
+                [[params.menu.footer]]
+                identifier = "CONTACT"
+                name = "CONTACT"
+                URL = "/contact"
+                weight = 3
 
-            [[params.menu.footer]]
-            name = "CONTACT"
-            URL = "/404.html"
-            weight = 3
-
-            [[params.menu.footer]]
-            name = "[SITESOURCE]"
-            URL = "https://github.com/D2/prod-dv"
-            weight = 2
+                [[params.menu.footer]]
+                identifier = "SITESOURCE"
+                name = "[SITESOURCE]"
+                URL = "https://github.com/D2/prod-dv"
+                weight = 2
 
 [permalinks]
     posts = '/posts/:title'
     img = '/static/:filename'
     js = '/static/:filename'
-

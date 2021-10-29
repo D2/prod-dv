@@ -1,30 +1,43 @@
 <script>
 
-var coll = document.getElementsByClassName("taglist_collapsible");
-var i;
+var button = document.getElementsByClassName("taglist_collapsible")[0];
+var content = button.nextElementSibling;
+
+
+var contentHeight = content.scrollHeight;
 {{if hasPrefix .RelPermalink "/tags/" }}
-var x = coll[0].nextElementSibling.childElementCount;
-var h = Math.round(x/3*75) +"px";
-coll[0].nextElementSibling.style.maxHeight = h;
-coll[0].innerHTML = "Filter By Tag (Click to close)";
-coll[0].nextElementSibling.style.overflow= "shown";
-coll[0].classList.toggle("active");
+button.innerHTML = "Filter By tag [CLICK TO CLOSE]"
+content.style.height = contentHeight + "px";
+content.style.paddingBottom =  "20px";
+content.style.overflow = "visible"
+{{else}}
+button.innerHTML = "Filter By tag [CLICK TO OPEN]"
+content.style.paddingBottom =  "0px";
+content.style.height = "0px";
+content.style.overflow = "hidden";
 {{end}}
-coll[0].addEventListener("click", function() {
-this.classList.toggle("active");
-console.log("test")
-var content = this.nextElementSibling;
-//finding tag amount so i can set the correct maxheight
-var x = content.childElementCount;
-var h = Math.round(x/3*75) +"px";
-if (content.style.maxHeight  === h) {
-this.innerHTML = "Filter By Tag (Click to open)";
-content.style.maxHeight = 0;
-content.style.overflow= "hidden";
-} else {
-content.style.maxHeight = h;
-this.innerHTML = "Filter By Tag (Click to close)";
-content.style.overflow= "shown";
+const open = (b, c) => {
+    b.innerHTML = "Filter By tag [CLICK TO CLOSE]"
+    c.style.height = contentHeight + "px";
+    c.style.paddingBottom =  "20px";
+    c.style.overflow = "visible";
 }
-});
+const close = (b, c) => {
+    b.innerHTML = "Filter By tag [CLICK TO OPEN]"
+    c.style.paddingBottom =  "0px";
+    c.style.height = "0px";
+    c.style.overflow = "hidden";
+}
+button.addEventListener("click", function Collapse() {
+        content.style.height = contentHeight;
+
+    if (content.style.height == "0px" || content.style.height == null ) {
+        open(button, content);
+    } else {
+        close(button, content);
+    }
+
+
+}
+)
 </script>

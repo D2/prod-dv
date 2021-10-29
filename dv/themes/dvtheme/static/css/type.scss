@@ -42,10 +42,10 @@ $small_size-mob: 18px;
 
 @mixin nav_link-type($mob:false) {
   @if($mob) {
-    font-size:$large_size-mob;
+    font-size:$med_size-mob;
   }
   @else {
-    font-size:$large_size;
+    font-size:$med_size;
     font-family: 'Prohibition', sans-serif;
     font-weight: 400;
   }
@@ -214,3 +214,4 @@ $small_size-mob: 18px;
 
   }
 }
+

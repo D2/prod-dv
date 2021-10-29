@@ -1,26 +1,29 @@
 <header>
 
     <nav>
-        <span id="logo">
-            <a href="/">DV</a>
-        </span>
+        <a id = "logo" href="/">
+                <img src="/img/dvlogo.svg" alt="">
+        </a>
 
         <ul>
             {{$currenturl := .RelPermalink}}
+
             {{range .Site.Params.menu.nav }}
-                {{if eq .URL $currenturl}}
+                {{if or (and (hasPrefix $currenturl "/posts") (eq .URL "/posts/")) (and (hasPrefix $currenturl "/tags") (eq .URL "/posts/") )}}
                     <li class = "active">
                         <a href=" {{.URL}}">{{.name}}</a>
                     </li>
-                    {{else}}
+                {{else if and (eq $currenturl "/") (eq .URL "/")  }}
+                    <li class = "active">
+                        <a href=" {{.URL}}">{{.name}}</a>
+                    </li>
+                {{else}}
                     <li>
                         <a href=" {{.URL}}">{{.name}}</a>
                     </li>
                 {{end}}
 
-
             {{end}}
-
         </ul>
         <span id="themeSwitch">
             <img src="/img/darktheme.svg" alt="Change theme">

@@ -12,8 +12,6 @@
   justify-content: left;
 
   margin: 0 15px 0 15px;
-  max-height: 0;
-  overflow: hidden;
 
   transition: 300ms;
   &_collapsible {
@@ -25,8 +23,6 @@
     user-select: none;
   }
   &_collapsible.active{
-
-    margin-bottom: 25px;
   }
   &_tag {
 
@@ -52,3 +48,85 @@
     color: var(--tag-count-clr);
   }
 }
+
+
+#recent_posts-container {
+  margin: 50px 0 50px 0;
+  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  .blogpreview {
+
+    max-width: 250px;
+    text-decoration: none;
+    display: grid;
+
+    grid-template-rows: auto 1fr auto ;
+    grid-template-columns: 1fr;
+
+    box-shadow:  -1px 6px 12px 3px rgb(10 10 10 / 40%);
+    background-color: var(--blog-preview-bg);
+    color: var(--blog-preview-clr);
+    padding: 15px;
+    transition: 100ms;
+    &:hover, &:focus {
+      box-shadow:  0 5px 20px 12px rgb(10 10 10 / 40%);
+
+      margin-top: -10px;
+      transition: 100ms;
+      margin-bottom: 10px;
+      .blogpreview_cover {
+        box-shadow: 1px 20px 12px 0 rgb(10 10 10 / 40%);
+        margin-top:-20px;
+        margin-bottom: 20px;
+        transition: 250ms;
+      }
+    }
+    &_date {
+
+      @include type.preview_date-type;
+
+      color: var(--blog-preview-date-clr);
+      height: 50px;
+      padding: 5px 0 10px 0;
+      width: 100%;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+    }
+    &_cover {
+      transition: 50ms;
+
+      width: 100%;
+      margin-left: -15%;
+      box-shadow:  6px 6px 12px 0 rgb(10 10 10 / 40%);
+
+      aspect-ratio: 2 / 1;
+    }
+
+
+    &_outline-container {
+      //border: 1px solid colors.$black;
+      border-top: none;
+      padding-bottom: 5px;
+    }
+    &_title {
+      @include type.preview_title-type;
+      display: block;
+      color: var(--blog-preview-title-clr);
+      margin: 25px 10px 15px 15px;
+      text-transform: capitalize;
+
+    }
+
+    &_author {
+      @include type.preview_author-type;
+      margin-left: 15px;
+      color: var(--blog-preview-author-clr);
+
+    }
+  }
+}
+
+
