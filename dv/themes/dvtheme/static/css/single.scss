@@ -70,3 +70,48 @@
   margin-bottom: 50px;
 }
 
+
+.TOCHeading {
+  width: auto;
+  display: inline-block;
+  padding: 20px;
+
+  font-size: type.$med_size;
+
+  margin-bottom: 5px;
+  margin-left: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+nav#TableOfContents {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: colors.$small-opacity-mask;
+    margin-left: 25px;
+    padding: 5px 50px 15px 15px;
+    user-select: none;
+    counter-reset: contents;
+  }
+
+  ul li {
+    display: block;
+    margin-top: -10px;
+    a {
+      text-align: left;
+      padding: 0;
+      font-size: type.$small_size;
+      &::before {
+        counter-increment: contents;                   /* Increment the value of section counter by 1 */
+        content: counter(contents) ". ";
+      }
+
+      &:hover, &:active {
+        background: none;
+        color: colors.$text-opacity-mask;
+        box-shadow: none;
+      }
+    }
+  }
+}

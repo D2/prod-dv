@@ -26,20 +26,20 @@ nav {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto;
-  padding: 10px 0 15px 0;
+  padding: 20px 0 15px 0;
   grid-column-gap: 60px;
   user-select: none;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(40px) brightness(0.9);
-  margin-top: 25px;
-
+  backdrop-filter: blur(15px) brightness(0.7);
   position: fixed;
   top: 0;
   left: 0;
+  row-gap: 10px;
+  padding-bottom: 15px;
   a#logo {
     margin-left: 50px;
     height: 60px;
-
+    width: 124.3px;
     text-decoration: none;
 
       img {
@@ -53,6 +53,9 @@ nav {
     max-width: 600px;
     align-items: center;
     justify-content: space-around;
+    transition: height 50ms;
+
+    height: 60px; padding-bottom: 20px; overflow: visible;
     li {
       @include type.nav_link-type;
       a {
@@ -81,7 +84,7 @@ nav {
 
 nav #themeSwitch{
   position: absolute;
-  top:15px;
+  top:20px;
   right:15px;
   img {
     filter: none;

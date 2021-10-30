@@ -57,7 +57,6 @@ h2 {
   display: block;
   max-width: 1000px;
   margin: auto;
-  overflow: hidden;
 
 }
 body {
@@ -239,7 +238,6 @@ form#contact {
   #contact_email {
     max-width: 250px;
     input {
-      margin-right: 50px;
       width: 100%;
     }
   }
@@ -287,61 +285,38 @@ form#contact {
   }
   .coverimg {
     position: absolute;
-    left: calc(50% + 150px);
+    left: 50%;
+    overflow: hidden;
     top: 0;
     opacity: 0.2;
     z-index: 1;
     transform: translateX(-50%);
+    width: 100%;
     img {
-
-      width: 800px;
+    
+      max-width: 800px;
     }
 
   }
 
 }
+#hamburger {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 15px;
+  top: 30px;
 
-.TOCHeading {
-  width: auto;
-  display: inline-block;
-  padding: 20px;
-
-  font-size: type.$med_size;
-
-  margin-bottom: 5px;
-  margin-left: 15px;
   cursor: pointer;
-  user-select: none;
-}
-nav#TableOfContents {
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: colors.$small-opacity-mask;
-    margin-left: 25px;
-    padding: 5px 50px 15px 15px;
-    user-select: none;
-    counter-reset: contents;
-  }
+  div {
+    width: 100%;
+    height: 2px;
 
-  ul li {
-    display: block;
-    margin-top: -10px;
-    a {
-      text-align: left;
-      padding: 0;
-      font-size: type.$small_size;
-      &::before {
-        counter-increment: contents;                   /* Increment the value of section counter by 1 */
-        content: counter(contents) ". ";
-      }
+    background-color: white;
 
-      &:hover, &:active {
-        background: none;
-        color: colors.$text-opacity-mask;
-        box-shadow: none;
-      }
-    }
   }
 }
+

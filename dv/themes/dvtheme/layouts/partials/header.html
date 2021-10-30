@@ -1,9 +1,14 @@
 <header>
 
-    <nav>
+    <nav id ="mainnav">
         <a id = "logo" href="/">
                 <img src="/img/dvlogo.svg" alt="">
         </a>
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
         <ul>
             {{$currenturl := .RelPermalink}}
@@ -29,6 +34,90 @@
             <img src="/img/darktheme.svg" alt="Change theme">
         </span>
     </nav>
+<script>
 
+
+
+    var Hamburgerbutton = document.getElementById("hamburger");
+    var Navcontent = Hamburgerbutton.nextElementSibling;
+    var navbar = document.getElementById("mainnav")
+    var NavContentHeight = Navcontent.scrollHeight;
+    var themeswitchnav = document.getElementById("themeSwitch")
+
+    const openNav = (b, c) => {
+        c.style.height = NavContentHeight + "px";
+        c.style.paddingBottom =  "20px";
+        c.style.overflow = "visible";
+
+        if (parseInt(window.getComputedStyle(document.body).width) <= 1000) {
+            navbar.style.gridTemplateRows = "auto auto";
+            themeswitchnav.style.display ="block";
+            Hamburgerbutton.style.display ="flex";
+        }
+
+
+        navbar.style.gridRowGap = "10px";
+        navbar.style.paddingBottom = "15px";
+    }
+    const closeNav = (b, c) => {
+        c.style.paddingBottom =  "0px";
+        c.style.height = "0px";
+        c.style.overflow = "hidden";
+        if (parseInt(window.getComputedStyle(document.body).width) <= 1000) {
+            console.log("mobile close")
+            navbar.style.gridTemplateRows = "auto";
+            themeswitchnav.style.display ="none";
+            Hamburgerbutton.style.display ="flex";
+        }
+
+        navbar.style.gridRowGap = "0px";
+        navbar.style.paddingBottom = "0px";
+    }
+
+
+    Hamburgerbutton.addEventListener("click", function Collapse() {
+            Navcontent.style.height = NavContentHeight;
+            if (Navcontent.style.height == "0px" || Navcontent.style.height == null ) {
+                openNav(Hamburgerbutton, Navcontent);
+            } else {
+                closeNav(Hamburgerbutton, Navcontent);
+            }
+
+
+        }
+    )
+
+    window.addEventListener('resize', function Reset() {
+        bodywidth = parseInt(window.getComputedStyle(document.body).width)
+
+        if (bodywidth <= "1000") {
+            closeNav(Hamburgerbutton, Navcontent);
+            themeswitchnav.style.display ="none";
+            Hamburgerbutton.style.display ="flex";
+        } else {
+            openNav(Hamburgerbutton, Navcontent);
+            themeswitchnav.style.display ="block";
+            Hamburgerbutton.style.display ="none";
+            Navcontent.style.height = null;
+            Navcontent.style.paddingBottom= null;
+
+        }
+    });
+    window.addEventListener('load', function Reset() {
+        bodywidth = parseInt(window.getComputedStyle(document.body).width)
+        // console.log(bodywidth)
+        if (bodywidth <= "1000") {
+            closeNav(Hamburgerbutton, Navcontent);
+            themeswitchnav.style.display ="none";
+            Hamburgerbutton.style.display ="flex";
+        } else {
+            openNav(Hamburgerbutton, Navcontent);
+            themeswitchnav.style.display ="block";
+            Hamburgerbutton.style.display ="none";
+            Navcontent.style.height = null;
+            Navcontent.style.paddingBottom= null;
+        }
+    });
+</script>
 
 </header>
