@@ -1,3 +1,29 @@
-
 <h2 class="contents_collapsible TOCHeading">CONTENTS [CLICK TO CLOSE]</h2>
 {{.TableOfContents}}
+<script>
+    const open = (b, c) => {
+        b.innerHTML = "CONTENTS [CLICK TO CLOSE]"
+        c.style.height = contentHeight + "px";
+        c.style.paddingBottom =  "20px";
+        c.style.overflow = "visible";
+    }
+    const close = (b, c) => {
+        b.innerHTML = "CONTENTS [CLICK TO OPEN]"
+        c.style.paddingBottom =  "0px";
+        c.style.height = "0px";
+        c.style.overflow = "hidden";
+    }
+    var ContentsButton = document.getElementsByClassName("contents_collapsible")[0];
+    var ContentsContent = ContentsButton.nextElementSibling;
+
+    contentHeight = ContentsContent.scrollHeight;
+
+    ContentsButton.addEventListener("click", function CollapseContents() {
+            if (ContentsContent.style.height == "0px" || ContentsContent.style.height == null ) {
+                open(ContentsButton , ContentsContent);
+            } else {
+                close(ContentsButton , ContentsContent);
+            }
+        }
+    )
+</script>

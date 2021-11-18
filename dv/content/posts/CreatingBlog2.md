@@ -5,6 +5,7 @@ cover: "/img/resized/FirstBlogCoverresized.png"
 draft: true
 author: "David"
 tags: ["HUGO", "JS", "WEB", "DESIGN"]
+toc: true
 ---
 
 ## Heading 1 

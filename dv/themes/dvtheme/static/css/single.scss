@@ -166,24 +166,30 @@
   user-select: none;
 }
 nav#TableOfContents {
+  transition: height 50ms;
   ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     background-color: colors.$small-opacity-mask;
     margin-left: 25px;
-    padding: 5px 50px 15px 15px;
+    padding: 15px 50px 15px 15px;
     user-select: none;
     counter-reset: contents;
+    gap: 10px;
   }
 
   ul li {
     display: block;
-    margin-top: -10px;
     a {
       text-align: left;
-      padding: 0;
+      padding: 5px;
       font-size: type.$small_size;
+      @include type.author-type;
+      &:link, &:focus, &:visited {
+        color: var(--single-para-clr);
+        text-decoration: none;
+      }
       &::before {
         counter-increment: contents;                   /* Increment the value of section counter by 1 */
         content: counter(contents) ". ";

@@ -19,7 +19,7 @@
   filter: invert(1);
   transition: 250ms;
 }
-nav {
+nav#mainnav {
   z-index: 1000;
 
   width: 100%;
@@ -41,7 +41,6 @@ nav {
     height: 60px;
     width: 124.3px;
     text-decoration: none;
-
       svg {
         height: 100%;
         fill: white;
