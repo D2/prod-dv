@@ -3,12 +3,11 @@
 var button = document.getElementsByClassName("taglist_collapsible")[0];
 var content = button.nextElementSibling;
 
-
 var contentHeight = content.scrollHeight;
 {{if hasPrefix .RelPermalink "/tags/" }}
 button.innerHTML = "Filter By tag [CLICK TO CLOSE]"
 content.style.height = contentHeight + "px";
-content.style.paddingBottom =  "20px";
+content.style.paddingBottom =  "5px";
 content.style.overflow = "visible"
 {{else}}
 button.innerHTML = "Filter By tag [CLICK TO OPEN]"

@@ -21,6 +21,8 @@
   margin: 0;
   padding: 0;
 }
+
+
 //
 h1 {
   @include type.heading_1-type;
@@ -38,7 +40,6 @@ h1 {
   background-size: 100% 100%;
 }
 h2 {
-
   @include type.heading_1-type;
   text-transform: capitalize;
 
@@ -144,8 +145,8 @@ p {
   overflow: visible;
   margin-top: 25px;
   &:hover, &:focus {
-    background-color: colors.$text-opacity-mask;
-    color: colors.$light-black;
+    background-color: colors.$text-opacity-mask !important;
+    color: colors.$light-black !important;
     outline: none;
     box-shadow: 1px 14px 15px 7px rgb(10 10 10 / 40%);
     transform: translateY(-5px);
@@ -190,7 +191,17 @@ p {
       outline-offset: 60px;
       color: colors.$accent;
       background: none;
-      padding-right: 30px;
+
+      &:before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+      }
       &:after {
 
         border: none;
@@ -270,53 +281,4 @@ form#contact {
   }
 }
 
-
-
-
-
-
-.title-container {
-  display: flex;
-  flex-wrap: wrap;
-  #title {
-    max-width: 500px;
-    z-index: 2;
-    margin: 50px 0 25px 0;
-  }
-  .coverimg {
-    position: absolute;
-    left: 50%;
-    overflow: hidden;
-    top: 0;
-    opacity: 0.2;
-    z-index: 1;
-    transform: translateX(-50%);
-    width: 100%;
-    img {
-    
-      max-width: 800px;
-    }
-
-  }
-
-}
-#hamburger {
-  width: 25px;
-  height: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: absolute;
-  right: 15px;
-  top: 30px;
-
-  cursor: pointer;
-  div {
-    width: 100%;
-    height: 2px;
-
-    background-color: white;
-
-  }
-}
 

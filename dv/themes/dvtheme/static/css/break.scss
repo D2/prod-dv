@@ -30,7 +30,11 @@ $moblayoutswitch: $maxstretch + 100px;
   }
   //recent posts
   #content #recent_posts-container {
-    padding-bottom: 35px;
+    margin-bottom: 10px;
+  }
+  #content #post_archive-button {
+    justify-content: center;
+    margin-bottom: 50px;
   }
   //header
   header nav {
@@ -51,6 +55,8 @@ $moblayoutswitch: $maxstretch + 100px;
       justify-content: space-around;
       max-width: unset;
       padding-bottom: 15px;
+      flex-direction: column;
+      gap: 35px;
       li a {
         padding: 5px;
       }
@@ -73,6 +79,9 @@ $moblayoutswitch: $maxstretch + 100px;
     margin-top: 15px;
     justify-content: center;
     align-items: center;
+    li {
+      width: 50%;
+    }
   }
 
 
@@ -100,7 +109,7 @@ $moblayoutswitch: $maxstretch + 100px;
   }
 
   nav ul li {
-    @include type.nav_link-type($mob: true);
+    //@include type.nav_link-type($mob: true);
   }
   footer ul li {
     //@include type.footer_link-type($mob: true);

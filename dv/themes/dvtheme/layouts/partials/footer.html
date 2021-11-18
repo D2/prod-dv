@@ -1,7 +1,7 @@
 <footer>
     <ul>
-        {{range .Site.Params.menu.footer }}
-            <li><a href=" {{.URL}}">{{.name}}</a></li>
+        {{range .Site.Menus.footer  }}
+            <li><a href=" {{.URL}}">{{.Name}}</a></li>
         {{end}}
     </ul>
 </footer>

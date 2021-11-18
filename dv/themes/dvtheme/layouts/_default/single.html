@@ -1,6 +1,9 @@
 {{define "main"}}
-<div class="blogpost-container">
 
+<div class="blogpost-container">
+    <form class="back-button">
+        <input class="default-button"type="button" value="GO BACK" onclick="history.back()">
+    </form>
     {{if ne .Title "Contact"}}
     <div class="title-container">
         <h1 id="title">{{ .Title }}</h1>
@@ -18,12 +21,80 @@
         {{ .Date | time.Format ":date_long" }}
     </div>
     {{if .Params.toc}}
+    <script>
+        const open = (b, c) => {
+            b.innerHTML = "CONTENTS [CLICK TO CLOSE]"
+            c.style.height = contentHeight + "px";
+            c.style.paddingBottom =  "20px";
+            c.style.overflow = "visible";
+        }
+        const close = (b, c) => {
+            b.innerHTML = "CONTENTS [CLICK TO OPEN]"
+            c.style.paddingBottom =  "0px";
+            c.style.height = "0px";
+            c.style.overflow = "hidden";
+        }
+        var ContentsButton = document.getElementsByClassName("contents_collapsible")[0];
+        var ContentsContent = ContentsButton.nextElementSibling;
+
+        contentHeight = ContentsContent.scrollHeight;
+
+        ContentsButton.addEventListener("click", function CollapseContents() {
+                if (ContentsContent.style.height == "0px" || ContentsContent.style.height == null ) {
+                    open(ContentsButton , ContentsContent);
+                } else {
+                    close(ContentsButton , ContentsContent);
+                }
+            }
+        )
+    </script>
+
     {{partial "toc" .}}
     {{end}}
 
     {{end}}
 
     {{.Content}}
+    <script>
+
+        const copyToClipboard = str => {
+            const el = document.createElement('textarea');  // Create a <textarea> element
+            el.value = str;                                 // Set its value to the string that you want copied
+            el.setAttribute('readonly', '');                // Make it readonly to be tamper-proof
+            el.style.position = 'absolute';
+            el.style.left = '-9999px';                      // Move outside the screen to make it invisible
+            document.body.appendChild(el);                  // Append the <textarea> element to the HTML document
+            const selected =
+                document.getSelection().rangeCount > 0        // Check if there is any content selected previously
+                    ? document.getSelection().getRangeAt(0)     // Store selection if found
+                    : false;                                    // Mark as false to know no selection existed before
+            el.select();                                    // Select the <textarea> content
+            document.execCommand('copy');                   // Copy - only works as a result of a user action (e.g. click events)
+            document.body.removeChild(el);                  // Remove the <textarea> element
+            if (selected) {                                 // If a selection existed before copying
+                document.getSelection().removeAllRanges();    // Unselect everything on the HTML document
+                document.getSelection().addRange(selected);   // Restore the original selection
+            }
+        };
+        function addAnchor(element) {
+            var img = document.createElement('img');
+            element.innerHTML = `<a href="#${element.id}">${element.innerText}</a>`;
+            img.title = 'Copy Link';
+            img.src = '/img/link.svg';
+            var getUrl = window.location.href.split("#")[0];
+            img.className= 'anchor'
+            element.appendChild(img)
+            img.setAttribute("onclick", "copyToClipboard(\""+getUrl+"\")");
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var headers = document.querySelectorAll('.blogpost-container h2')
+            if (headers) {
+                headers.forEach(addAnchor)
+            }
+        })
+    </script>
+
 
     {{if ne .Title "Contact"}}
     <div class="tags">
@@ -39,38 +110,6 @@
 
 </div>
 
-<script>
 
-
-    const open = (b, c) => {
-        b.innerHTML = "CONTENTS [CLICK TO CLOSE]"
-        c.style.height = contentHeight + "px";
-        c.style.paddingBottom =  "20px";
-        c.style.overflow = "visible";
-    }
-    const close = (b, c) => {
-        b.innerHTML = "CONTENTS [CLICK TO OPEN]"
-        c.style.paddingBottom =  "0px";
-        c.style.height = "0px";
-        c.style.overflow = "hidden";
-    }
-
-    var ContentsButton = document.getElementsByClassName("contents_collapsible")[0];
-    var ContentsContent = ContentsButton.nextElementSibling;
-
-    contentHeight = ContentsContent.scrollHeight;
-
-    ContentsButton.addEventListener("click", function CollapseContents() {
-            if (ContentsContent.style.height == "0px" || ContentsContent.style.height == null ) {
-                open(ContentsButton , ContentsContent);
-            } else {
-                close(ContentsButton , ContentsContent);
-            }
-
-
-        }
-    )
-
-</script>
 
 {{end}}

@@ -18,11 +18,9 @@
     {{ $title := print .Site.Title " | " .Title }}
     {{ if .IsHome }}{{ $title = print .Site.Title " | " "Home"}}{{ end }}
 
-
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ if not (in (string .Site.BaseURL) "localhost") }}
-
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3D12WWY32C"></script>
         <script>
@@ -33,10 +31,8 @@
             gtag('config', 'G-3D12WWY32C');
         </script>
 
-
-
     {{ end }}
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     {{ range $import := .Site.Params.fontImports }}
         <link rel="stylesheet" href="{{$import}} ">

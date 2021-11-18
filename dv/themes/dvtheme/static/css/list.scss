@@ -12,8 +12,9 @@
   justify-content: left;
 
   margin: 0 15px 0 15px;
-
+  padding: 20px;
   transition: 300ms;
+
   &_collapsible {
     cursor:pointer;
     box-shadow: none;
@@ -21,11 +22,12 @@
     color: var(--list-collapsible-clr);
     background: var(--list-collapsible-bg);
     user-select: none;
+    margin-bottom: 25px;
   }
   &_collapsible.active{
   }
   &_tag {
-
+    height: min-content;
     background-color: var(--tag-bg);
     padding: 20px;
     display: flex;
@@ -35,6 +37,7 @@
     display: flex;
     column-gap: 10px;
     @include type.tags-type;
+    height: min-content;
     a {
       text-decoration: none;
     }
@@ -45,6 +48,7 @@
   }
   &_count {
     @include type.date-type;
+    height: min-content;
     color: var(--tag-count-clr);
   }
 }
@@ -73,14 +77,11 @@
     transition: 100ms;
     &:hover, &:focus {
       box-shadow:  0 5px 20px 12px rgb(10 10 10 / 40%);
-
-      margin-top: -10px;
+      transform: translateY(-5px);
       transition: 100ms;
-      margin-bottom: 10px;
       .blogpreview_cover {
         box-shadow: 1px 20px 12px 0 rgb(10 10 10 / 40%);
-        margin-top:-20px;
-        margin-bottom: 20px;
+        transform: translateY(-10px);
         transition: 250ms;
       }
     }

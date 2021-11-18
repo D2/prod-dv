@@ -15,7 +15,7 @@
   50%{background-position:100% 50%}
   100%{background-position:0% 50%}
 }
-.darktheme nav a#logo img{
+.darktheme nav a#logo svg{
   filter: invert(1);
   transition: 250ms;
 }
@@ -42,7 +42,7 @@ nav {
     width: 124.3px;
     text-decoration: none;
 
-      img {
+      svg {
         height: 100%;
         fill: white;
       }
@@ -53,7 +53,6 @@ nav {
     max-width: 600px;
     align-items: center;
     justify-content: space-around;
-    transition: height 50ms;
 
     height: 60px; padding-bottom: 20px; overflow: visible;
     li {
@@ -130,7 +129,24 @@ nav ul li.active { //active link
     }
   }
 }
-.css-selector {
 
+#hamburger {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 15px;
+  top: 30px;
+
+  cursor: pointer;
+  div {
+    width: 100%;
+    height: 2px;
+
+    background-color: white;
+
+  }
 }
 

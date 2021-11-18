@@ -32,23 +32,57 @@ paginate = 6
                 URL = "https://github.com/d2"
                 weight = 2
 
-                [[params.menu.footer]]
-                identifier = "LINKTREE"
-                name = "LINKTREE"
-                URL = "https://linktr.ee/david"
-                weight = 4
+menu = ['nav', 'footer']
 
-                [[params.menu.footer]]
-                identifier = "CONTACT"
-                name = "CONTACT"
-                URL = "/contact"
-                weight = 3
+[menu]
+[[menu.nav]]
+identifier = "Home"
+name = "Home"
+URL = "/"
+weight = 1
+[[menu.nav]]
+identifier = "Posts"
+name = "Posts"
+url = "/posts/"
+weight = 2
 
-                [[params.menu.footer]]
-                identifier = "SITESOURCE"
-                name = "[SITESOURCE]"
-                URL = "https://github.com/D2/prod-dv"
-                weight = 2
+[[menu.nav]]
+identifier = "Github"
+name = "Github"
+url = "https://github.com/d2"
+weight = 3
+
+[[menu.footer]]
+identifier = "LINKTREE"
+name = "LINKTREE"
+URL = "https://linktr.ee/david"
+weight = 1
+
+[[menu.footer]]
+identifier = "CONTACT"
+name = "CONTACT"
+URL = "/contact"
+weight = 2
+
+[[menu.footer]]
+identifier = "SITESOURCE"
+name = "[SITESOURCE]"
+URL = "https://github.com/D2/prod-dv"
+weight = 3
+
+[[menu.footer]]
+identifier = "SITESOURCE"
+name = "SITE SOURCE"
+URL = "https://github.com/D2/prod-dv"
+weight = 4
+
+[[menu.footer]]
+identifier = "HUGO"
+name = "BUILT USING HUGO"
+URL = "https://gohugo.io"
+weight = 1
+
+
 
 [permalinks]
     posts = '/posts/:title'
