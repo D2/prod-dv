@@ -80,7 +80,7 @@ nav#mainnav {
   }
 }
 
-nav #themeSwitch{
+nav#mainnav #themeSwitch{
   position: absolute;
   top:20px;
   right:15px;
@@ -90,11 +90,11 @@ nav #themeSwitch{
     transition: transform 250ms;
   }
 }
-nav #themeSwitch.darktheme img {
+nav#mainnav #themeSwitch.darktheme img {
   filter: invert(1);
   transform: rotate(180deg);
 }
-nav ul li.active { //active link
+nav#mainnav ul li.active { //active link
   position: relative;
 
 
